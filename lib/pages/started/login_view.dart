@@ -2,13 +2,15 @@
 
 import 'package:betafitness/core.dart';
 import 'package:betafitness/pages/started/widgets/body_header.dart';
+import 'package:betafitness/pages/started/widgets/text_button_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+@immutable
 class LoginView extends StatelessWidget {
   LoginView({Key? key}) : super(key: key);
-  TextEditingController emailController=TextEditingController();
-  TextEditingController passwordController=TextEditingController();
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -19,9 +21,8 @@ class LoginView extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             BodyHeader(
-                title: "Sign In",
-                subtitle:
-                    "Train and live the new experience of \nexercising at home",
+                title: TextConstants.signIn,
+                subtitle: TextConstants.loginAbout,
                 backgroundImagePath: "assets/images/black/12.jpg"),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
@@ -36,8 +37,14 @@ class LoginView extends StatelessWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        _loginButton(),
-                        _registerButton(),
+                        TextButtonWidget(
+                            title: TextConstants.logIn,
+                            press: () {},
+                            color2: kFirstColor),
+                        TextButtonWidget(
+                            title: TextConstants.signUp,
+                            press: () => Get.toNamed(Routes.REGISTER),
+                            color2: kThirdColor),
                       ],
                     ),
                   )
@@ -45,48 +52,6 @@ class LoginView extends StatelessWidget {
               ),
             )
           ],
-        ),
-      ),
-    );
-  }
-
-  TextButton _loginButton() {
-    return TextButton(
-      onPressed: () {},
-      child: Container(
-        height: 50,
-        width: Get.width * 0.7,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(5),
-          color: kFirstColor,
-        ),
-        child: Center(
-          child: Text(
-            "Login",
-            style: TextStyle(color: Colors.white, fontSize: 20),
-          ),
-        ),
-      ),
-    );
-  }
-
-  TextButton _registerButton() {
-    return TextButton(
-      onPressed: () {
-        Get.toNamed(Routes.REGISTER);
-      },
-      child: Container(
-        height: 50,
-        width: Get.width * 0.7,
-        decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(5),
-            color: kThirdColor,
-            border: Border.all(width: 1, color: kFirstColor)),
-        child: Center(
-          child: Text(
-            "Sign Up",
-            style: TextStyle(color: Colors.white, fontSize: 20),
-          ),
         ),
       ),
     );
@@ -100,7 +65,7 @@ class LoginView extends StatelessWidget {
           Get.toNamed(Routes.FORGET_PASSWORD);
         },
         child: Text(
-          "Forgot your password?",
+          TextConstants.forgetYourPassword,
           style: TextStyle(color: Colors.white, fontSize: 18),
         ),
       ),
@@ -111,9 +76,18 @@ class LoginView extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        TextFieldWidget(labelText: "E-mail", hintText: "info@batuhanturgut.com.tr",controller: emailController),
+        TextFieldWidget(
+            labelText: TextConstants.email,
+            hintText: TextConstants.emailHint,
+            controller: emailController,
+            textInputType: TextInputType.emailAddress),
         SizedBox(height: 20),
-        TextFieldWidget(labelText: "Password", hintText: "*******", obscureText: true,controller: passwordController)
+        TextFieldWidget(
+            labelText: TextConstants.password,
+            hintText: TextConstants.passwordHint,
+            obscureText: true,
+            controller: passwordController,
+            textInputType: TextInputType.visiblePassword)
       ],
     );
   }

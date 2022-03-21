@@ -28,19 +28,7 @@ class AboutView extends StatelessWidget {
               child: Column(
                 children: [
                   const SizedBox(height: 30),
-                  RichText(
-                    text: const TextSpan(
-                      text: 'HARD\t',
-                      style: TextStyle(
-                          fontFamily: "Bebas", fontSize: 30, letterSpacing: 5),
-                      children: <TextSpan>[
-                        TextSpan(
-                          text: 'ELEMENT',
-                          style: TextStyle(color: kFirstColor),
-                        )
-                      ],
-                    ),
-                  ),
+                  const HeaderReachText(),
                   const Spacer(),
                   Align(
                     alignment: Alignment.centerLeft,

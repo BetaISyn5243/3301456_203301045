@@ -1,6 +1,4 @@
-
-import 'package:betafitness/routes/app_pages.dart';
-import 'package:betafitness/shared/xcore.dart';
+import 'package:betafitness/core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -23,19 +21,7 @@ class WelcomeView extends StatelessWidget {
               child: Column(
                 children: [
                   const SizedBox(height: 30),
-                  RichText(
-                    text: const TextSpan(
-                      text: 'HARD\t',
-                      style: TextStyle(
-                          fontFamily: "Bebas", fontSize: 30, letterSpacing: 5),
-                      children: <TextSpan>[
-                        TextSpan(
-                          text: 'ELEMENT',
-                          style: TextStyle(color: kFirstColor),
-                        )
-                      ],
-                    ),
-                  ),
+                  const HeaderReachText(),
                   const Spacer(),
                   Align(
                     alignment: Alignment.centerLeft,
@@ -43,7 +29,7 @@ class WelcomeView extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: const [
                         Text(
-                          "Welcome",
+                          TextConstants.welcome,
                           style: TextStyle(
                             fontSize: 40,
                             color: Colors.white,
@@ -52,7 +38,7 @@ class WelcomeView extends StatelessWidget {
                         ),
                         SizedBox(height: 17),
                         Text(
-                          "Train and live the new experience of \nexercising at home",
+                          TextConstants.splashAbout,
                           style: TextStyle(color: Colors.white),
                         )
                       ],
@@ -70,7 +56,7 @@ class WelcomeView extends StatelessWidget {
                       width: Get.width * 0.7,
                       child: const Center(
                         child: Text(
-                          "Try Now",
+                          TextConstants.tryNow,
                           style: TextStyle(
                             color: Colors.white,
                             fontSize: 20,
@@ -93,7 +79,7 @@ class WelcomeView extends StatelessWidget {
                       width: Get.width * 0.7,
                       child: const Center(
                         child: Text(
-                          "Login",
+                          TextConstants.logIn,
                           style: TextStyle(
                             color: Colors.white,
                             fontSize: 20,

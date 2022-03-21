@@ -1,15 +1,17 @@
 import 'package:betafitness/core.dart';
 import 'package:betafitness/pages/started/widgets/body_header.dart';
+import 'package:betafitness/pages/started/widgets/text_button_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+@immutable
 class RegisterView extends StatelessWidget {
   RegisterView({Key? key}) : super(key: key);
-  TextEditingController nameController = TextEditingController();
-  TextEditingController emailController = TextEditingController();
-  TextEditingController phoneController = TextEditingController();
-  TextEditingController passwordController1 = TextEditingController();
-  TextEditingController passwordController2 = TextEditingController();
+  final TextEditingController nameController = TextEditingController();
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController phoneController = TextEditingController();
+  final TextEditingController passwordController1 = TextEditingController();
+  final TextEditingController passwordController2 = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -30,9 +32,9 @@ class RegisterView extends StatelessWidget {
 }
 
 Widget bodyHeader() {
-  return BodyHeader(
-      title: "Sign Up",
-      subtitle: "Train and live the new experience of \nexercising at home",
+  return const BodyHeader(
+      title: TextConstants.signUp,
+      subtitle: TextConstants.registerAbout,
       backgroundImagePath: "assets/images/black/4.jpg");
 }
 
@@ -48,36 +50,42 @@ Widget bodyForm(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         TextFieldWidget(
-            labelText: "Name", hintText: "Batuhan Turgut", controller: name),
-        SizedBox(height: 20),
+            labelText: TextConstants.name,
+            hintText: TextConstants.nameHint,
+            controller: name,
+            textInputType: TextInputType.name),
+        const SizedBox(height: 20),
         TextFieldWidget(
-            labelText: "E-mail",
-            hintText: "info@batuhanturgut.com.tr",
-            controller: email),
-        SizedBox(height: 20),
+            labelText: TextConstants.email,
+            hintText: TextConstants.emailHint,
+            controller: email,
+            textInputType: TextInputType.emailAddress),
+        const SizedBox(height: 20),
         TextFieldWidget(
-          labelText: "Phone",
-          hintText: "+90 500-000-00-00",
+          labelText: TextConstants.phone,
+          hintText: TextConstants.phoneHint,
           controller: phone,
+          textInputType: TextInputType.phone,
         ),
-        SizedBox(height: 20),
+        const SizedBox(height: 20),
         TextFieldWidget(
-          labelText: "Password",
-          hintText: "*******",
+          labelText: TextConstants.password,
+          hintText: TextConstants.passwordHint,
           obscureText: true,
           controller: pass1,
+          textInputType: TextInputType.visiblePassword,
         ),
-        SizedBox(height: 20),
+        const SizedBox(height: 20),
         TextFieldWidget(
-          labelText: "Password",
-          hintText: "*******",
+          labelText: TextConstants.passwordAgain,
+          hintText: TextConstants.passwordHint,
           obscureText: true,
           controller: pass2,
+          textInputType: TextInputType.visiblePassword,
         ),
-        SizedBox(height: 20),
-        Text(
-            "By signing up, I agree to the Beta Fitness User Agreement and Privacy Policy."),
-        SizedBox(height: 20)
+        const SizedBox(height: 20),
+        const Text(TextConstants.policyAgreement),
+        const SizedBox(height: 20)
       ],
     ),
   );
@@ -85,56 +93,20 @@ Widget bodyForm(
 
 Widget actionButton() {
   return Padding(
-    padding: EdgeInsets.only(bottom: 50),
+    padding: const EdgeInsets.only(bottom: 50),
     child: Center(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          _registerButton(),
-          _cancelButton(),
+          TextButtonWidget(
+              title: TextConstants.register, press: () {}, color2: kFirstColor),
+          TextButtonWidget(
+              title: TextConstants.cancel,
+              press: () {
+                Get.back();
+              },
+              color2: kThirdColor)
         ],
-      ),
-    ),
-  );
-}
-
-TextButton _registerButton() {
-  return TextButton(
-    onPressed: () {},
-    child: Container(
-      height: 50,
-      width: Get.width * 0.7,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(5),
-        color: kFirstColor,
-      ),
-      child: Center(
-        child: Text(
-          "Register",
-          style: TextStyle(color: Colors.white, fontSize: 20),
-        ),
-      ),
-    ),
-  );
-}
-
-TextButton _cancelButton() {
-  return TextButton(
-    onPressed: () {
-      Get.toNamed(Routes.REGISTER);
-    },
-    child: Container(
-      height: 50,
-      width: Get.width * 0.7,
-      decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(5),
-          color: kThirdColor,
-          border: Border.all(width: 1, color: kFirstColor)),
-      child: Center(
-        child: Text(
-          "Cancel",
-          style: TextStyle(color: Colors.white, fontSize: 20),
-        ),
       ),
     ),
   );
