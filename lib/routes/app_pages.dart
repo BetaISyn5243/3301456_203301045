@@ -11,11 +11,11 @@ class AppPages {
   static final routes = [
     GetPage(
       name: Routes.WELCOME,
-      page: () => WelcomeView(),
+      page: () => const WelcomeView(),
     ),
     GetPage(
       name: Routes.ABOUT,
-      page: () => AboutView(),
+      page: () => const AboutView(),
     ),
     GetPage(
       name: Routes.LOGIN,
