@@ -1,6 +1,9 @@
 import 'package:betafitness/core.dart';
-import 'package:flutter/gestures.dart';
+import 'package:betafitness/pages/started/widgets/workout_card_widget.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 class HomeView extends StatelessWidget {
@@ -30,6 +33,17 @@ class HomeView extends StatelessWidget {
   }
 
   Container contextMenu() {
+    List<String> category = [
+      "Popular",
+      "Hard workout",
+      "Full body",
+      "Crossfit"
+    ];
+    List<List<Object>> workouts = [
+      ["Dribble Exercises", const AssetImage("assets/images/black/10.jpg")],
+      ["Combine Exercises", const AssetImage("assets/images/black/11.jpg")],
+      ["Push-Up Exercises", const AssetImage("assets/images/black/12.jpg")],
+    ];
     return Container(
       decoration: const BoxDecoration(
         gradient: LinearGradient(
@@ -42,30 +56,109 @@ class HomeView extends StatelessWidget {
       ),
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
-        child: Column(children: [
-          headerSection(),
-          SizedBox(height: 10,),
-          Container(
-            height: Get.height * 0.07,
-            decoration: BoxDecoration(
-                color: kSecondColor,
-                borderRadius: BorderRadius.all(Radius.circular(30))),
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 15),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [Text(TextConstants.searchWorkout), Icon(Icons.search)],
-              ),
-            ),
-          )
-        ]),
+        child: Column(crossAxisAlignment: CrossAxisAlignment.start,
+            //mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              headerSection(),
+              SizedBox(height: 10.h),
+              searchBoxWidget(),
+              categoryCardWidget(category),
+              popularWorkoutWidget(workouts),
+            ]),
       ),
     );
   }
 
+  Column popularWorkoutWidget(List<List<Object>> workouts) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          "Popular Workout",
+          style: TextStyle(
+              color: Colors.white,
+              fontSize: 29.sp,
+              fontWeight: FontWeight.w700),
+        ),
+        SizedBox(
+          height: 20.h,
+        ),
+        SingleChildScrollView(
+          scrollDirection: Axis.horizontal,
+          physics: BouncingScrollPhysics(),
+          child: Row(
+            children: [
+              for (var i = 0; i < workouts.length; i++)
+                WorkoutCardWidget(
+                    title: workouts[i][0] as String,
+                    image: workouts[i][1] as ImageProvider,
+                    route: Routes.REGISTER)
+            ],
+          ),
+        )
+      ],
+    );
+  }
+
+  Container searchBoxWidget() {
+    return Container(
+      alignment: Alignment.center,
+      height: 40.h,
+      decoration: BoxDecoration(
+          color: kSecondColor,
+          borderRadius: BorderRadius.all(Radius.circular(30.r))),
+      child: Padding(
+        padding: EdgeInsets.only(left: 16.w, right: 16.w),
+        child: TextFormField(
+          textAlignVertical: TextAlignVertical.top,
+          decoration: InputDecoration(
+            border: InputBorder.none,
+            alignLabelWithHint: true,
+            suffixIcon: Icon(Icons.search),
+            suffixIconColor: Colors.white,
+            hintStyle: TextStyle(
+                fontWeight: FontWeight.w400, fontSize: 13.sp, height: 1.5.h),
+            hintText: TextConstants.searchWorkout,
+          ),
+        ),
+      ),
+    );
+  }
+
+  Container categoryCardWidget(List<String> category) {
+    return Container(
+        height: 70.h,
+        width: double.infinity,
+        alignment: Alignment.center,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            Container(
+              height: 30.h,
+              alignment: Alignment.center,
+              width: ScreenUtil().screenWidth - 40.w,
+              child: ValueBuilder<int?>(
+                initialValue: 0,
+                builder: (value, updateFn) => Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    for (var i = 0; i < category.length; i++)
+                      CategoryWidget(
+                        title: category[i],
+                        enable: value == i ? true : false,
+                        onTap: () => updateFn(i),
+                      ),
+                  ],
+                ),
+              ),
+            )
+          ],
+        ));
+  }
+
   Widget headerSection() {
     return Container(
-      height: Get.height * 0.49,
+      height: 255.h,
       alignment: Alignment.center,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -74,13 +167,13 @@ class HomeView extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               RichText(
-                text: const TextSpan(
+                text: TextSpan(
                   text: TextConstants.hey,
                   style: TextStyle(
-                      fontSize: 25,
+                      fontSize: 23.sp,
                       fontWeight: FontWeight.w600,
                       color: kFirstColor,
-                      letterSpacing: 0.5),
+                      letterSpacing: 0.5.sp),
                   children: <TextSpan>[
                     TextSpan(
                       text: " " + TextConstants.username,
@@ -91,27 +184,27 @@ class HomeView extends StatelessWidget {
               ),
               Icon(
                 Icons.account_circle,
-                size: 40,
+                size: 45.sp,
               )
             ],
           ),
           Icon(
             Icons.arrow_circle_right_outlined,
             color: kFirstColor,
-            size: 80,
+            size: 80.sp,
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               RichText(
-                text: const TextSpan(
+                text: TextSpan(
                   text: TextConstants.find,
                   style: TextStyle(
-                      fontSize: 25,
+                      fontSize: 25.sp,
                       fontWeight: FontWeight.w600,
                       color: kFirstColor,
-                      letterSpacing: 0.5),
-                  children: <TextSpan>[
+                      letterSpacing: 0.5.sp),
+                  children: const <TextSpan>[
                     TextSpan(
                       text: " " + TextConstants.yourWorkout,
                       style: TextStyle(color: Colors.white),
@@ -121,7 +214,7 @@ class HomeView extends StatelessWidget {
               ),
               Icon(
                 Icons.arrow_downward_rounded,
-                size: 25,
+                size: 25.sp,
               )
             ],
           ),
@@ -132,7 +225,7 @@ class HomeView extends StatelessWidget {
 
   Container backgroundImage() {
     return Container(
-      height: Get.height * 0.55,
+      height: 300.h,
       decoration: const BoxDecoration(
         image: DecorationImage(
           image: AssetImage("assets/images/black/3.jpg"),

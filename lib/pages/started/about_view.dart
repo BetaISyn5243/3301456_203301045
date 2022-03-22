@@ -1,5 +1,6 @@
 import 'package:betafitness/shared/xcore.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 class AboutView extends StatelessWidget {
@@ -20,8 +21,8 @@ class AboutView extends StatelessWidget {
             ),
           ),
           Container(
-            width: Get.size.width,
-            height: Get.size.height,
+            width: ScreenUtil().screenWidth,
+            height: ScreenUtil().screenHeight,
             color: kThirdColor.withOpacity(0.7),
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 20),

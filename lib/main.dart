@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/route_manager.dart';
 
 import 'core.dart';
@@ -11,7 +12,7 @@ void main() {
   /// Make sure you add this line here, so the plugin can access the native side
   WidgetsFlutterBinding.ensureInitialized();
 
-  runApp( const MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -19,21 +20,26 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(
-      title: "Aqua Workout App",
-      themeMode: ThemeMode.dark,
-      theme: ThemeData.dark().copyWith(
-        primaryColor: Colors.blue,
-        hintColor: Colors.white,
-        textTheme: const TextTheme(subtitle1: TextStyle(color: Colors.white)),
-      ),
-      debugShowCheckedModeBanner: false,
-      defaultTransition: Transition.cupertino,
-      opaqueRoute: Get.isOpaqueRouteDefault,
-      popGesture: Get.isPopGestureEnable,
-      transitionDuration: const Duration(milliseconds: 230),
-      initialRoute: AppPages.INITIAL,
-      getPages: AppPages.routes,
-    );
+    return ScreenUtilInit(
+        designSize: Size(360, 690),
+        minTextAdapt: true,
+        splitScreenMode: true,
+        builder: () => GetMaterialApp(
+              title: "Aqua Workout App",
+              themeMode: ThemeMode.dark,
+              theme: ThemeData.dark().copyWith(
+                primaryColor: Colors.blue,
+                hintColor: Colors.white,
+                textTheme:
+                    const TextTheme(subtitle1: TextStyle(color: Colors.white)),
+              ),
+              debugShowCheckedModeBanner: false,
+              defaultTransition: Transition.cupertino,
+              opaqueRoute: Get.isOpaqueRouteDefault,
+              popGesture: Get.isPopGestureEnable,
+              transitionDuration: const Duration(milliseconds: 230),
+              initialRoute: AppPages.INITIAL,
+              getPages: AppPages.routes,
+            ));
   }
 }
