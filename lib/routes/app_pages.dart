@@ -29,5 +29,9 @@ class AppPages {
       name: Routes.REGISTER,
       page: () => RegisterView(),
     ),
+    GetPage(
+      name: Routes.HOME,
+      page: () => HomeView(),
+    ),
   ];
 }

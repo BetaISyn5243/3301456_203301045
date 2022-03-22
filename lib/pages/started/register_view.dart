@@ -99,12 +99,10 @@ Widget actionButton() {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           TextButtonWidget(
-              title: TextConstants.register, press: () {}, color2: kFirstColor),
+              title: TextConstants.register, press: () =>Get.offAllNamed(Routes.HOME), color2: kFirstColor),
           TextButtonWidget(
               title: TextConstants.cancel,
-              press: () {
-                Get.back();
-              },
+              press: () => Get.back(),
               color2: kThirdColor)
         ],
       ),

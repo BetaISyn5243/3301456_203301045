@@ -31,7 +31,12 @@ class TextConstants {
   static const String registerAbout ="Train and live the new experience of \nexercising at home";
   static const String passwordAgain ="Password Again";
   static const String policyAgreement = "By signing up, I agree to the Beta Fitness User Agreement and Privacy Policy.";
-
+  //Home Screen
+  static const String hey = "Hey,";
+  static const String username = "Username";
+  static const String find = "Find";
+  static const String yourWorkout = "your Workout";
+  static const String searchWorkout = "SEARCH WORKOUT";
 
 
 }

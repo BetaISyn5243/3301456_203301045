@@ -5,3 +5,4 @@ export 'started/login_view.dart';
 export 'started/register_view.dart';
 export 'started/forget_password_view.dart';
 export 'utils/text_constants.dart';
+export 'home_view.dart';

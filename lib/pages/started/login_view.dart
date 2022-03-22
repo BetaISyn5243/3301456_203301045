@@ -39,7 +39,7 @@ class LoginView extends StatelessWidget {
                       children: [
                         TextButtonWidget(
                             title: TextConstants.logIn,
-                            press: () {},
+                            press: () => Get.offAllNamed(Routes.HOME),
                             color2: kFirstColor),
                         TextButtonWidget(
                             title: TextConstants.signUp,

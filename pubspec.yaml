@@ -88,6 +88,12 @@ flutter:
     - family: Bebas
       fonts:
         - asset: assets/fonts/Bebas/BebasNeue-Regular.ttf
+    - family: Nunito
+      fonts:
+        - asset: assets/fonts/Nunito/static/Nunito-Regular.ttf
+        - asset: assets/fonts/Nunito/Nunito-VariableFont_wght.ttf
+        - asset: assets/fonts/Nunito/Nunito-Italic-VariableFont_wght.ttf
+        - asset: assets/fonts/Nunito/static/Nunito-Black.ttf
   # fonts:
   #   - family: Schyler
   #     fonts:
