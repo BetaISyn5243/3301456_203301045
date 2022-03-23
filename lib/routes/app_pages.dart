@@ -1,7 +1,7 @@
 // ignore_for_file: constant_identifier_names
 
 import 'package:get/get.dart';
-import '../core.dart';
+import 'package:betafitness/core.dart';
 
 part 'app_routes.dart';
 

@@ -24,7 +24,8 @@ class MyApp extends StatelessWidget {
         designSize: Size(360, 690),
         minTextAdapt: true,
         splitScreenMode: true,
-        builder: () => GetMaterialApp(
+        builder: () =>
+            GetMaterialApp(
               title: "Aqua Workout App",
               themeMode: ThemeMode.dark,
               theme: ThemeData.dark().copyWith(

@@ -7,12 +7,11 @@ import 'package:get/get.dart';
 @immutable
 class RegisterView extends StatelessWidget {
   RegisterView({Key? key}) : super(key: key);
-  final TextEditingController nameController = TextEditingController();
-  final TextEditingController emailController = TextEditingController();
-  final TextEditingController phoneController = TextEditingController();
-  final TextEditingController passwordController1 = TextEditingController();
-  final TextEditingController passwordController2 = TextEditingController();
-
+  static final TextEditingController nameController = TextEditingController();
+  static final TextEditingController emailController = TextEditingController();
+  static final TextEditingController phoneController = TextEditingController();
+  static final TextEditingController passwordController1 = TextEditingController();
+  static final TextEditingController passwordController2 = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -45,6 +44,7 @@ Widget bodyForm(
     TextEditingController pass1,
     TextEditingController pass2) {
   return Padding(
+
     padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
     child: Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -99,7 +99,10 @@ Widget actionButton() {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           TextButtonWidget(
-              title: TextConstants.register, press: () =>Get.offAllNamed(Routes.HOME), color2: kFirstColor),
+              title: TextConstants.register, press: () =>
+          {
+            Get.offAllNamed(Routes.HOME)
+          }, color2: kFirstColor),
           TextButtonWidget(
               title: TextConstants.cancel,
               press: () => Get.back(),

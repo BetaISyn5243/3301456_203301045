@@ -44,6 +44,7 @@ class HomeView extends StatelessWidget {
       ["Combine Exercises", const AssetImage("assets/images/black/11.jpg")],
       ["Push-Up Exercises", const AssetImage("assets/images/black/12.jpg")],
     ];
+
     return Container(
       decoration: const BoxDecoration(
         gradient: LinearGradient(
@@ -176,7 +177,7 @@ class HomeView extends StatelessWidget {
                       letterSpacing: 0.5.sp),
                   children: <TextSpan>[
                     TextSpan(
-                      text: " " + TextConstants.username,
+                      text: " " + RegisterView.nameController.text,
                       style: TextStyle(color: Colors.white),
                     )
                   ],
