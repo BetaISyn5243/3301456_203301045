@@ -1,8 +1,6 @@
 import 'package:betafitness/core.dart';
 import 'package:betafitness/pages/started/widgets/workout_card_widget.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
@@ -12,6 +10,7 @@ class HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      bottomNavigationBar: BottomNavigationBarWidget(),
       backgroundColor: kThirdColor,
       body: SingleChildScrollView(
         child: Column(
@@ -42,6 +41,10 @@ class HomeView extends StatelessWidget {
     List<List<Object>> workouts = [
       ["Dribble Exercises", const AssetImage("assets/images/black/10.jpg")],
       ["Combine Exercises", const AssetImage("assets/images/black/11.jpg")],
+      ["Push-Up Exercises", const AssetImage("assets/images/black/12.jpg")],
+      ["Push-Up Exercises", const AssetImage("assets/images/black/12.jpg")],
+      ["Push-Up Exercises", const AssetImage("assets/images/black/12.jpg")],
+      ["Push-Up Exercises", const AssetImage("assets/images/black/12.jpg")],
       ["Push-Up Exercises", const AssetImage("assets/images/black/12.jpg")],
     ];
 
