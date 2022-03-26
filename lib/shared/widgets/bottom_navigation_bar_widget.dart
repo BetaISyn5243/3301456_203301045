@@ -1,5 +1,6 @@
 import 'package:betafitness/core.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 enum _types { WORKOUT, ICON, PROFILE }
 
@@ -30,6 +31,7 @@ class _BottomNavigationBarWidgetState extends State<BottomNavigationBarWidget> {
           TextButton(
               onPressed: () {
                 _onChanged(_types.WORKOUT);
+                Get.toNamed(Routes.HOME);
               },
               child: Text(
                 "Workout",
@@ -50,6 +52,8 @@ class _BottomNavigationBarWidgetState extends State<BottomNavigationBarWidget> {
           TextButton(
               onPressed: () {
                 _onChanged(_types.PROFILE);
+                Get.toNamed(Routes.PROFILE);
+
               },
               child: Text(
                 "Profile",

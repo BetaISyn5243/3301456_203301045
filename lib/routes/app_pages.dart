@@ -33,5 +33,9 @@ class AppPages {
       name: Routes.HOME,
       page: () => HomeView(),
     ),
+    GetPage(
+      name: Routes.PROFILE,
+      page: () => ProfileView(),
+    ),
   ];
 }
