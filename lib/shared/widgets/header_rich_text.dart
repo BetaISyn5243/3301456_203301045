@@ -1,5 +1,5 @@
-import 'package:betafitness/core.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:betafitness/coregs.dart';
+import 'package:betafitness/utils/xcore.dart';
 
 class HeaderReachText extends StatelessWidget {
   const HeaderReachText({Key? key}) : super(key: key);
@@ -14,7 +14,7 @@ class HeaderReachText extends StatelessWidget {
         children: const <TextSpan>[
           TextSpan(
             text: TextConstants.splashSecond,
-            style: TextStyle(color: kFirstColor),
+            style: TextStyle(color: ColorConstants.kFirstColor),
           )
         ],
       ),

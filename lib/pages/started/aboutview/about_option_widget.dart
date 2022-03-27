@@ -1,13 +1,12 @@
-
-import 'package:betafitness/shared/styles/colors.dart';
+import 'package:betafitness/utils/xcore.dart';
 import 'package:flutter/material.dart';
 
-class OptionWidget extends StatelessWidget {
+class AboutOptionWidget extends StatelessWidget {
   final String state, detail;
   final bool enable;
   final Function() onTap;
 
-  const OptionWidget({
+  const AboutOptionWidget({
     Key? key,
     required this.onTap,
     required this.state,
@@ -25,7 +24,7 @@ class OptionWidget extends StatelessWidget {
             height: 180,
             width: 150,
             decoration: BoxDecoration(
-                color: kSecondColor,
+                color: ColorConstants.kSecondColor,
                 borderRadius: BorderRadius.circular(15),
                 boxShadow: const [
                   BoxShadow(
@@ -42,8 +41,8 @@ class OptionWidget extends StatelessWidget {
                   const SizedBox(height: 30),
                   Text(
                     state,
-                    style: const TextStyle(
-                        color: kFirstColor,
+                    style: TextStyle(
+                        color: ColorConstants.kFirstColor,
                         fontWeight: FontWeight.bold,
                         fontSize: 25),
                   ),
@@ -70,10 +69,10 @@ class OptionWidget extends StatelessWidget {
                 color: Color(0xFF373850),
               ),
               child: enable
-                  ? const Center(
+                  ? Center(
                       child: Icon(
                         Icons.done,
-                        color: kFirstColor,
+                        color: ColorConstants.kFirstColor,
                       ),
                     )
                   : const SizedBox(),

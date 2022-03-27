@@ -8,14 +8,14 @@ class WelcomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: kThirdColor,
+      backgroundColor: ColorConstants.kThirdColor,
       body: Stack(
         children: [
-          WelcomeBackgroundImage(),
+          const BackgroundImageWidget(imagePath: ImageConstants.welcomeBGPath),
           Container(
             width: ScreenUtil().screenWidth,
             height: ScreenUtil().screenHeight,
-            color: kThirdColor.withOpacity(0.7),
+            color: ColorConstants.kThirdColor.withOpacity(0.7),
             child: Padding(
               padding: EdgeInsets.symmetric(horizontal: 25.w, vertical: 20.h),
               child: Column(
@@ -23,7 +23,9 @@ class WelcomeView extends StatelessWidget {
                   SizedBox(height: 30.h),
                   const HeaderReachText(),
                   const Spacer(),
-                  WelcomeInfo(),
+                  const InfoWidget(
+                      title: TextConstants.welcome,
+                      description: TextConstants.splashDescription),
                   SizedBox(height: 30.h),
                   WelcomeTextButton(1),
                   SizedBox(height: 10.h),

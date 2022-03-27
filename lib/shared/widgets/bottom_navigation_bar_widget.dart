@@ -1,6 +1,4 @@
 import 'package:betafitness/core.dart';
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 enum _types { WORKOUT, ICON, PROFILE }
 
@@ -24,7 +22,7 @@ class _BottomNavigationBarWidgetState extends State<BottomNavigationBarWidget> {
   @override
   Widget build(BuildContext context) {
     return BottomAppBar(
-      color: kSecondColor,
+      color: ColorConstants.kSecondColor,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: <Widget>[
@@ -37,14 +35,17 @@ class _BottomNavigationBarWidgetState extends State<BottomNavigationBarWidget> {
                 "Workout",
                 style: TextStyle(
                     color: activeTab == _types.WORKOUT
-                        ? kFirstColor
-                        : Color(0xFF707070)),
+                        ? ColorConstants.kFirstColor
+                        : ColorConstants.kFourthColor),
               )),
           IconButton(
             tooltip: 'Search',
-            icon: Icon(Icons.search,color: activeTab == _types.ICON
-                ? kFirstColor
-                : Color(0xFF707070) ,),
+            icon: Icon(
+              Icons.search,
+              color: activeTab == _types.ICON
+                  ? ColorConstants.kFirstColor
+                  : ColorConstants.kFourthColor,
+            ),
             onPressed: () {
               _onChanged(_types.ICON);
             },
@@ -53,14 +54,13 @@ class _BottomNavigationBarWidgetState extends State<BottomNavigationBarWidget> {
               onPressed: () {
                 _onChanged(_types.PROFILE);
                 Get.toNamed(Routes.PROFILE);
-
               },
               child: Text(
                 "Profile",
                 style: TextStyle(
                     color: activeTab == _types.PROFILE
-                        ? kFirstColor
-                        : Color(0xFF707070)),
+                        ? ColorConstants.kFirstColor
+                        : ColorConstants.kFourthColor),
               )),
         ],
       ),

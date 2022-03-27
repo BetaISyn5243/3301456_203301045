@@ -11,7 +11,7 @@ class ForgetPasswordView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: kThirdColor,
+      backgroundColor: ColorConstants.kThirdColor,
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -19,7 +19,7 @@ class ForgetPasswordView extends StatelessWidget {
             const BodyHeader(
                 backgroundImagePath: "assets/images/black/14.jpg",
                 title: TextConstants.forgetPassword,
-                subtitle: TextConstants.forgetAbout),
+                subtitle: TextConstants.forgetDescription),
             bodyForm(emailController),
             footerButton()
           ],
@@ -33,9 +33,13 @@ class ForgetPasswordView extends StatelessWidget {
       child: Column(
         children: [
           TextButtonWidget(
-              title: "Submit", press: () => Get.back(), color2: kFirstColor),
+              title: "Submit",
+              press: () => Get.back(),
+              color2: ColorConstants.kFirstColor),
           TextButtonWidget(
-              title: "Cancel", press: () => Get.back(), color2: kThirdColor)
+              title: "Cancel",
+              press: () => Get.back(),
+              color2: ColorConstants.kThirdColor)
         ],
       ),
     );

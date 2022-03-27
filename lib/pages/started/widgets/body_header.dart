@@ -1,6 +1,3 @@
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-
 import 'package:betafitness/core.dart';
 
 class BodyHeader extends StatelessWidget {
@@ -30,7 +27,7 @@ class BodyHeader extends StatelessWidget {
             begin: Alignment.bottomCenter,
             end: Alignment.topCenter,
             colors: [
-              kThirdColor,
+              ColorConstants.kThirdColor,
               Colors.transparent,
             ]),
       ),
