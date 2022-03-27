@@ -11,7 +11,7 @@ Widget WelcomeTextButton(int val) {
               border: Border.all(width: 2.w, color: Colors.white))
           : BoxDecoration(
               borderRadius: BorderRadius.circular(25.r),
-              color: kFirstColor,
+              color: ColorConstants.kFirstColor,
             ),
       height: 50,
       width: ScreenUtil().screenWidth * 0.7,

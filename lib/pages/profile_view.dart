@@ -1,6 +1,4 @@
 import 'package:betafitness/core.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ProfileView extends StatelessWidget {
   ProfileView({Key? key}) : super(key: key);
@@ -19,7 +17,7 @@ class ProfileView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: BottomNavigationBarWidget(),
-      backgroundColor: kThirdColor,
+      backgroundColor: ColorConstants.kThirdColor,
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -60,7 +58,7 @@ class ProfileView extends StatelessWidget {
                   Container(
                     alignment: Alignment.center,
                     decoration: BoxDecoration(
-                      color: kSecondColor,
+                      color: ColorConstants.kSecondColor,
                       borderRadius: BorderRadius.all(
                         Radius.circular(6.r),
                       ),
@@ -95,7 +93,7 @@ class ProfileView extends StatelessWidget {
                   Padding(padding: EdgeInsets.only(top: 30.h)),
                   Container(
                     decoration: BoxDecoration(
-                      color: kSecondColor,
+                      color: ColorConstants.kSecondColor,
                       borderRadius: BorderRadius.all(
                         Radius.circular(6.r),
                       ),
@@ -119,7 +117,7 @@ class ProfileView extends StatelessWidget {
                                 ),
                                 Container(
                                   width: ScreenUtil().screenWidth * 0.80,
-                                  color: Color(0xFF707070),
+                                  color: ColorConstants.kFourthColor,
                                   height: 0.2.h,
                                 ),
                               ],

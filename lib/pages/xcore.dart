@@ -6,5 +6,4 @@ export 'started/forget_password_view.dart';
 export 'started/login_view.dart';
 export 'started/register_view.dart';
 export 'started/widgets/category_widget.dart';
-export 'utils/text_constants.dart';
 export 'welcomeview/welcome_view.dart';

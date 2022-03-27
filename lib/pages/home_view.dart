@@ -1,8 +1,5 @@
 import 'package:betafitness/core.dart';
 import 'package:betafitness/pages/started/widgets/workout_card_widget.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:get/get.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({Key? key}) : super(key: key);
@@ -11,7 +8,7 @@ class HomeView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: BottomNavigationBarWidget(),
-      backgroundColor: kThirdColor,
+      backgroundColor: ColorConstants.kThirdColor,
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -54,7 +51,7 @@ class HomeView extends StatelessWidget {
             begin: Alignment.bottomCenter,
             end: Alignment.topCenter,
             colors: [
-              kThirdColor,
+              ColorConstants.kThirdColor,
               Colors.transparent,
             ]),
       ),
@@ -109,7 +106,7 @@ class HomeView extends StatelessWidget {
       alignment: Alignment.center,
       height: 40.h,
       decoration: BoxDecoration(
-          color: kSecondColor,
+          color: ColorConstants.kSecondColor,
           borderRadius: BorderRadius.all(Radius.circular(30.r))),
       child: Padding(
         padding: EdgeInsets.only(left: 16.w, right: 16.w),
@@ -176,7 +173,7 @@ class HomeView extends StatelessWidget {
                   style: TextStyle(
                       fontSize: 23.sp,
                       fontWeight: FontWeight.w600,
-                      color: kFirstColor,
+                      color: ColorConstants.kFirstColor,
                       letterSpacing: 0.5.sp),
                   children: <TextSpan>[
                     TextSpan(
@@ -194,7 +191,7 @@ class HomeView extends StatelessWidget {
           ),
           Icon(
             Icons.arrow_circle_right_outlined,
-            color: kFirstColor,
+            color: ColorConstants.kFirstColor,
             size: 80.sp,
           ),
           Row(
@@ -206,7 +203,7 @@ class HomeView extends StatelessWidget {
                   style: TextStyle(
                       fontSize: 25.sp,
                       fontWeight: FontWeight.w600,
-                      color: kFirstColor,
+                      color: ColorConstants.kFirstColor,
                       letterSpacing: 0.5.sp),
                   children: const <TextSpan>[
                     TextSpan(

@@ -15,7 +15,7 @@ class LoginView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: kThirdColor,
+      backgroundColor: ColorConstants.kThirdColor,
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -40,11 +40,11 @@ class LoginView extends StatelessWidget {
                         TextButtonWidget(
                             title: TextConstants.logIn,
                             press: () => Get.offAllNamed(Routes.HOME),
-                            color2: kFirstColor),
+                            color2: ColorConstants.kFirstColor),
                         TextButtonWidget(
                             title: TextConstants.signUp,
                             press: () => Get.toNamed(Routes.REGISTER),
-                            color2: kThirdColor),
+                            color2: ColorConstants.kThirdColor),
                       ],
                     ),
                   )

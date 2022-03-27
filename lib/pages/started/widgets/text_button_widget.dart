@@ -1,5 +1,3 @@
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:betafitness/core.dart';
 
 class TextButtonWidget extends StatelessWidget {
@@ -24,7 +22,7 @@ class TextButtonWidget extends StatelessWidget {
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(5),
           color: color2,
-          border: Border.all(width: 1, color: kFirstColor),
+          border: Border.all(width: 1, color: ColorConstants.kFirstColor),
         ),
         child: Center(
           child: Text(

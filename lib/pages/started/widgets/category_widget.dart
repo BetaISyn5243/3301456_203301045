@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
 import 'package:betafitness/core.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CategoryWidget extends StatelessWidget {
@@ -22,11 +22,15 @@ class CategoryWidget extends StatelessWidget {
         padding: EdgeInsets.symmetric(vertical: 4.h, horizontal: 10.w),
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(30),
-            border: enable ? Border.all(color: kFirstColor, width: 1.w) : null),
+            border: enable
+                ? Border.all(color: ColorConstants.kFirstColor, width: 1.w)
+                : null),
         child: Text(
           title,
-          style:  TextStyle(
-              color: kFirstColor, fontWeight: FontWeight.w400, fontSize: 15.sp),
+          style: TextStyle(
+              color: ColorConstants.kFirstColor,
+              fontWeight: FontWeight.w400,
+              fontSize: 15.sp),
         ),
       ),
     );
