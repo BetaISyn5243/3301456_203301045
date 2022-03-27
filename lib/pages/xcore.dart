@@ -1,9 +1,10 @@
 // Started
-export 'started/welcome_view.dart';
-export 'started/about_view.dart';
+export 'home_view.dart';
+export 'profile_view.dart';
+export 'started/aboutview/about_view.dart';
+export 'started/forget_password_view.dart';
 export 'started/login_view.dart';
 export 'started/register_view.dart';
-export 'started/forget_password_view.dart';
-export 'utils/text_constants.dart';
-export 'home_view.dart';
 export 'started/widgets/category_widget.dart';
+export 'utils/text_constants.dart';
+export 'welcomeview/welcome_view.dart';

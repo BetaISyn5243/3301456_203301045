@@ -1,6 +1,5 @@
-import 'package:flutter/cupertino.dart';
-
 import 'package:betafitness/core.dart';
+import 'package:flutter/cupertino.dart';
 
 class HeaderReachText extends StatelessWidget {
   const HeaderReachText({Key? key}) : super(key: key);
@@ -8,10 +7,11 @@ class HeaderReachText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return RichText(
-      text: const TextSpan(
+      text: TextSpan(
         text: TextConstants.splashFirst,
-        style: TextStyle(fontFamily: "Bebas", fontSize: 30, letterSpacing: 5),
-        children: <TextSpan>[
+        style: TextStyle(
+            fontFamily: "Bebas", fontSize: 30.sp, letterSpacing: 5.sp),
+        children: const <TextSpan>[
           TextSpan(
             text: TextConstants.splashSecond,
             style: TextStyle(color: kFirstColor),
