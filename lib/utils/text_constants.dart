@@ -40,6 +40,8 @@ class TextConstants {
   static const String forgetPassword = "Forget Password";
   static const String forgetDescription =
       "Train and live the new experience of \nexercising at home";
+  static const String submit = "Submit";
+
   //Register Screen
   static const String registerDescription =
       "Train and live the new experience of \nexercising at home";
