@@ -177,7 +177,7 @@ class HomeView extends StatelessWidget {
                       letterSpacing: 0.5.sp),
                   children: <TextSpan>[
                     TextSpan(
-                      text: " " + RegisterView.nameController.text,
+                      text: " " + RegisterController.nameController.text,
                       style: TextStyle(color: Colors.white),
                     )
                   ],

@@ -1,6 +1,6 @@
 import 'package:betafitness/core.dart';
-import 'package:betafitness/pages/started/widgets/body_header.dart';
-import 'package:betafitness/pages/started/widgets/text_button_widget.dart';
+import 'package:betafitness/shared/widgets/body_header.dart';
+import 'package:betafitness/shared/widgets/text_button_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
