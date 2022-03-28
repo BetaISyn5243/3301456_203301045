@@ -13,7 +13,7 @@ Widget WelcomeTextButton(int val) {
               borderRadius: BorderRadius.circular(25.r),
               color: ColorConstants.kFirstColor,
             ),
-      height: 50,
+      height: 50.h,
       width: ScreenUtil().screenWidth * 0.7,
       child: Center(
         child: Text(

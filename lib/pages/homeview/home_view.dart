@@ -28,7 +28,6 @@ class HomeView extends StatelessWidget {
       ["Push-Up Exercises", AssetImage("assets/images/black/12.jpg")],
     ];
     return Scaffold(
-      bottomNavigationBar: BottomNavigationBarWidget(),
       backgroundColor: ColorConstants.kThirdColor,
       body: SingleChildScrollView(
         child: Stack(

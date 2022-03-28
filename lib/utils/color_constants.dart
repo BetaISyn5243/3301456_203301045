@@ -7,4 +7,6 @@ class ColorConstants {
   static const kFourthColor = Color(0xFF707070);
   static const kAppBarBackgroundColor = Color(0xFF252638);
   static const kFirstTextColor = Colors.white;
+  static const kFirstIconColor = Colors.white;
+  static const exitBGColor = Color(0xFFE57373);
 }

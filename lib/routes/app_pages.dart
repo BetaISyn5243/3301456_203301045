@@ -1,7 +1,7 @@
 // ignore_for_file: constant_identifier_names
 
-import 'package:get/get.dart';
 import 'package:betafitness/core.dart';
+import 'package:get/get.dart';
 
 part 'app_routes.dart';
 
@@ -31,7 +31,7 @@ class AppPages {
     ),
     GetPage(
       name: Routes.HOME,
-      page: () => HomeView(),
+      page: () => AppFrame(),
     ),
     GetPage(
       name: Routes.PROFILE,
