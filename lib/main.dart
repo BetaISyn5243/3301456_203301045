@@ -1,7 +1,4 @@
-import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:get/route_manager.dart';
 
 import 'core.dart';
 
@@ -17,15 +14,13 @@ void main() {
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
         designSize: Size(360, 690),
         minTextAdapt: true,
         splitScreenMode: true,
-        builder: () =>
-            GetMaterialApp(
+        builder: () => GetMaterialApp(
               title: "Aqua Workout App",
               themeMode: ThemeMode.dark,
               theme: ThemeData.dark().copyWith(
