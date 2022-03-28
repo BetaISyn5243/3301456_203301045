@@ -1,9 +1,7 @@
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+part of 'home_view.dart';
 
-class WorkoutCardWidget extends StatelessWidget {
-  const WorkoutCardWidget({
+class HomeWorkoutWidget extends StatelessWidget {
+  const HomeWorkoutWidget({
     Key? key,
     required this.title,
     required this.image,
@@ -18,7 +16,7 @@ class WorkoutCardWidget extends StatelessWidget {
     return InkWell(
       onTap: () => Get.toNamed(route),
       child: Padding(
-        padding: const EdgeInsets.only(right:14 ),
+        padding: EdgeInsets.only(right: 14.w),
         child: SizedBox(
           height: 180.h,
           width: 110.w,

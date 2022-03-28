@@ -1,13 +1,11 @@
-import 'package:betafitness/core.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+part of 'home_view.dart';
 
-class CategoryWidget extends StatelessWidget {
+class HomeCategoryCardWidget extends StatelessWidget {
   final String title;
   final bool enable;
   final Function() onTap;
 
-  const CategoryWidget({
+  const HomeCategoryCardWidget({
     Key? key,
     required this.onTap,
     required this.enable,
@@ -21,7 +19,7 @@ class CategoryWidget extends StatelessWidget {
       child: Container(
         padding: EdgeInsets.symmetric(vertical: 4.h, horizontal: 10.w),
         decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(30),
+            borderRadius: BorderRadius.circular(30.r),
             border: enable
                 ? Border.all(color: ColorConstants.kFirstColor, width: 1.w)
                 : null),

@@ -4,4 +4,5 @@ class ImageConstants {
   static const String loginBGPath = "assets/images/black/12.jpg";
   static const String registerBGPath = "assets/images/black/4.jpg";
   static const String forgetBGPath = "assets/images/black/14.jpg";
+  static const String homeBGPath = "assets/images/black/3.jpg";
 }
