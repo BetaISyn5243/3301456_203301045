@@ -1,13 +1,18 @@
+import 'package:betafitness/firebase_options.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/services.dart';
 
 import 'core.dart';
 
-void main() {
+Future<void> main() async {
   SystemChrome.setSystemUIOverlayStyle(
       const SystemUiOverlayStyle(statusBarBrightness: Brightness.dark));
 
   /// Make sure you add this line here, so the plugin can access the native side
   WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
 
   runApp(const MyApp());
 }

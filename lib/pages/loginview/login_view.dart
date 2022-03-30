@@ -1,5 +1,4 @@
 import 'package:betafitness/core.dart';
-
 part 'login_controllers.dart';
 part 'login_forget_button.dart';
 part 'login_form_login.dart';
