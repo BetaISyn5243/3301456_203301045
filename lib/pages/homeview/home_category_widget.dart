@@ -8,7 +8,7 @@ class HomeCategoryWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
         height: 70.h,
-        width: double.infinity,
+        width: ScreenUtil().screenWidth,
         alignment: Alignment.center,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,

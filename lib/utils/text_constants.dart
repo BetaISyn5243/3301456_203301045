@@ -1,9 +1,10 @@
-class TextConstants {
+abstract class TextConstants {
   //Splash Screen
   static const String splashFirst = "BETA\t";
   static const String splashSecond = "FITNESS";
   static const String splashDescription =
       "Train and live the new experience of \nexercising at home";
+
   //About Screen
   static const String aboutYou = "About You";
   static const String aboutDescription = "FITNESS";
@@ -26,6 +27,7 @@ class TextConstants {
   static const String name = "Name";
   static const String back = "Back";
   static const String next = "Next";
+
   //Hints
   static const String passwordHint = "********";
   static const String emailHint = "info@batuhanturgut.com.tr";
@@ -35,6 +37,7 @@ class TextConstants {
   //Login Screen
   static const String loginAbout =
       "Train and live the new experience of \nexercising at home";
+
   //Forget Screen
   static const String forgetYourPassword = "Forget Your Password?";
   static const String forgetPassword = "Forget Password";
@@ -48,10 +51,14 @@ class TextConstants {
   static const String passwordAgain = "Password Again";
   static const String policyAgreement =
       "By signing up, I agree to the Beta Fitness User Agreement and Privacy Policy.";
+
   //Home Screen
   static const String hey = "Hey,";
   static const String username = "Username";
   static const String find = "Find";
   static const String yourWorkout = "your Workout";
   static const String searchWorkout = "SEARCH WORKOUT";
+
+  //Profile Screen
+  static const String signOut = "Sign Out";
 }

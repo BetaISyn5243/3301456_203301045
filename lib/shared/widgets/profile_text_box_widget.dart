@@ -14,7 +14,7 @@ class ProfileTextBoxWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 50.h,
       width: ScreenUtil().screenWidth * 0.85,
       child: Row(
@@ -32,11 +32,11 @@ class ProfileTextBoxWidget extends StatelessWidget {
             children: [
               Text(
                 title,
-                style: TextStyle(fontWeight: FontWeight.bold),
+                style: const TextStyle(fontWeight: FontWeight.bold),
               ),
               (description != "null")
                   ? Text(description)
-                  : SizedBox(height: 0, width: 0),
+                  : const SizedBox(height: 0, width: 0),
             ],
           )
         ],

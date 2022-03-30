@@ -13,7 +13,7 @@ class RegisterActionButton extends StatelessWidget {
           children: [
             TextButtonWidget(
                 title: TextConstants.register,
-                press: () => {Get.offAllNamed(Routes.HOME)},
+                press: () => {Get.offAllNamed(Routes.APPFRAME)},
                 color2: ColorConstants.kFirstColor),
             TextButtonWidget(
                 title: TextConstants.cancel,

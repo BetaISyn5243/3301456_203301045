@@ -28,24 +28,34 @@ class HomeView extends StatelessWidget {
       ["Push-Up Exercises", AssetImage("assets/images/black/12.jpg")],
     ];
     return Scaffold(
-      bottomNavigationBar: BottomNavigationBarWidget(),
       backgroundColor: ColorConstants.kThirdColor,
       body: SingleChildScrollView(
+        physics: const NeverScrollableScrollPhysics(),
         child: Stack(
           children: [
-            const BackgroundImageWidget(imagePath: ImageConstants.homeBGPath),
+            SizedBox(
+                height: 300.h,
+                width: ScreenUtil().screenWidth,
+                child: const BackgroundImageWidget(
+                    imagePath: ImageConstants.homeBGPath)),
             Container(
+              height: ScreenUtil().screenHeight,
+              width: ScreenUtil().screenWidth,
               decoration: const BoxDecoration(
                 gradient: LinearGradient(
                     begin: Alignment.bottomCenter,
                     end: Alignment.topCenter,
+                    stops: [
+                      0.6,
+                      1
+                    ],
                     colors: [
                       ColorConstants.kThirdColor,
                       Colors.transparent,
                     ]),
               ),
               child: Padding(
-                padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 15.h),
+                padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),
                 child: Column(crossAxisAlignment: CrossAxisAlignment.start,
                     //mainAxisAlignment: MainAxisAlignment.center,
                     children: [

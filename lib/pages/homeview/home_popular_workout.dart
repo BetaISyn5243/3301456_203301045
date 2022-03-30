@@ -13,11 +13,11 @@ class HomePopularWorkout extends StatelessWidget {
           "Popular Workout",
           style: TextStyle(
               color: Colors.white,
-              fontSize: 29.sp,
+              fontSize: 27.sp,
               fontWeight: FontWeight.w700),
         ),
         SizedBox(
-          height: 20.h,
+          height: 10.h,
         ),
         SingleChildScrollView(
           scrollDirection: Axis.horizontal,

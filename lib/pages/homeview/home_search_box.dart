@@ -18,7 +18,7 @@ class HomeSearchBox extends StatelessWidget {
           decoration: InputDecoration(
             border: InputBorder.none,
             alignLabelWithHint: true,
-            suffixIcon: Icon(Icons.search),
+            suffixIcon: const Icon(Icons.search),
             suffixIconColor: Colors.white,
             hintStyle: TextStyle(
                 fontWeight: FontWeight.w400, fontSize: 13.sp, height: 1.5.h),

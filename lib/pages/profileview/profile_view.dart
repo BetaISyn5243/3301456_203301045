@@ -1,13 +1,18 @@
 import 'package:betafitness/core.dart';
 
+part 'profile_header.dart';
+part 'profile_meuns_widget.dart';
+part 'profile_split_widget.dart';
+part 'profile_user_informations_widget.dart';
+
 class ProfileView extends StatelessWidget {
   ProfileView({Key? key}) : super(key: key);
-  List<List<Object>> userInformation = [
+  final List<List<Object>> userInformations = [
     [Icons.email_outlined, "Email", "info@batuhanturgut.com.tr"],
     [Icons.phone_outlined, "Phone", "+90-500-000-00-00"],
     [Icons.date_range_outlined, "Birth Of Date", "01-01-2023"]
   ];
-  List<List<Object>> menus = [
+  final List<List<Object>> menus = [
     [Icons.redeem, "Invite Friends"],
     [Icons.shield_outlined, "User Agreement"],
     [Icons.settings_outlined, "Settings"]
@@ -16,121 +21,50 @@ class ProfileView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: BottomNavigationBarWidget(),
       backgroundColor: ColorConstants.kThirdColor,
       body: SingleChildScrollView(
         child: Column(
           children: [
+            const ProfileHeader(),
             Container(
-              width: ScreenUtil().screenWidth,
-              height: 100.h,
-              decoration: BoxDecoration(
-                  color: Colors.red,
-                  borderRadius: BorderRadius.only(
-                      bottomLeft: Radius.circular(30),
-                      bottomRight: Radius.circular(30))),
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  Icon(Icons.account_circle),
-                  Container(
-                    width: 200.w,
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text("data"),
-                        Text("data"),
-                      ],
-                    ),
-                  ),
-                  Icon(Icons.ac_unit_rounded)
-                ],
-              ),
-            ),
-            Container(
-              height: ScreenUtil().screenHeight * 0.7,
+              height: ScreenUtil().screenHeight * 0.8,
               padding: EdgeInsets.only(top: 20.h),
               width: ScreenUtil().screenWidth * 0.9,
               child: Column(
                 children: [
-                  Container(
-                    alignment: Alignment.center,
-                    decoration: BoxDecoration(
-                      color: ColorConstants.kSecondColor,
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(6.r),
-                      ),
-                    ),
-                    child: SizedBox(
-                      height: 150.h,
-                      width: ScreenUtil().screenWidth * 0.85,
-                      child: ListView.builder(
-                          padding: EdgeInsets.only(top: 0),
-                          physics: NeverScrollableScrollPhysics(),
-                          itemCount: 3,
-                          scrollDirection: Axis.vertical,
-                          itemBuilder: (context, value) {
-                            return Column(
-                              children: [
-                                ProfileTextBoxWidget(
-                                  title: userInformation[value][1] as String,
-                                  description:
-                                      userInformation[value][2] as String,
-                                  icon: userInformation[value][0] as IconData,
-                                ),
-                                Container(
-                                  width: ScreenUtil().screenWidth * 0.80,
-                                  color: Color(0xFF707070),
-                                  height: 0.2.h,
-                                ),
-                              ],
-                            );
-                          }),
-                    ),
-                  ),
+                  ProfileUserInformationsWidget(
+                      userInformations: userInformations),
+                  Padding(padding: EdgeInsets.only(top: 30.h)),
+                  ProfileMenusWidget(menus: menus),
                   Padding(padding: EdgeInsets.only(top: 30.h)),
                   Container(
+                    width: ScreenUtil().screenWidth * 0.9,
+                    height: 50.h,
+                    alignment: Alignment.center,
                     decoration: BoxDecoration(
-                      color: ColorConstants.kSecondColor,
+                      color: ColorConstants.exitBGColor,
                       borderRadius: BorderRadius.all(
                         Radius.circular(6.r),
                       ),
                     ),
-                    alignment: Alignment.center,
-                    child: SizedBox(
-                      height: 150.h,
-                      width: ScreenUtil().screenWidth * 0.85,
-                      child: ListView.builder(
-                          padding: EdgeInsets.only(top: 0),
-                          physics: NeverScrollableScrollPhysics(),
-                          itemCount: 3,
-                          scrollDirection: Axis.vertical,
-                          itemBuilder: (context, value) {
-                            return Column(
-                              children: [
-                                ProfileTextBoxWidget(
-                                  title: menus[value][1] as String,
-                                  description: "null",
-                                  icon: menus[value][0] as IconData,
-                                ),
-                                Container(
-                                  width: ScreenUtil().screenWidth * 0.80,
-                                  color: ColorConstants.kFourthColor,
-                                  height: 0.2.h,
-                                ),
-                              ],
-                            );
-                          }),
-                    ),
-                  ),
-                  Container(
-                    padding: EdgeInsets.only(top: 30.h),
-                    child: ProfileTextBoxWidget(
-                      title: "adsşlfkjas",
-                      description: "null",
-                      icon: (Icons.account_circle),
+                    child: TextButton(
+                      onPressed: () {},
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 8.w),
+                            child: const Icon(Icons.exit_to_app_outlined,
+                                color: ColorConstants.kFirstIconColor),
+                          ),
+                          Text(
+                            TextConstants.signOut,
+                            style: TextStyle(
+                                color: ColorConstants.kFirstTextColor,
+                                fontSize: 20.sp),
+                          )
+                        ],
+                      ),
                     ),
                   ),
                 ],
