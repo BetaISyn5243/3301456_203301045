@@ -1,4 +1,4 @@
-class TextConstants {
+abstract class TextConstants {
   //Splash Screen
   static const String splashFirst = "BETA\t";
   static const String splashSecond = "FITNESS";

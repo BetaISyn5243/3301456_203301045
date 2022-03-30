@@ -1,7 +1,6 @@
 // ignore_for_file: constant_identifier_names
 
 import 'package:betafitness/core.dart';
-import 'package:get/get.dart';
 
 part 'app_routes.dart';
 
@@ -19,23 +18,23 @@ class AppPages {
     ),
     GetPage(
       name: Routes.LOGIN,
-      page: () => LoginView(),
+      page: () => const LoginView(),
     ),
     GetPage(
       name: Routes.FORGET_PASSWORD,
-      page: () => ForgetPasswordView(),
+      page: () => const ForgetPasswordView(),
     ),
     GetPage(
       name: Routes.REGISTER,
-      page: () => RegisterView(),
+      page: () => const RegisterView(),
     ),
     GetPage(
-      name: Routes.HOME,
-      page: () => AppFrame(),
+      name: Routes.APPFRAME,
+      page: () => const AppFrame(),
     ),
     GetPage(
-      name: Routes.PROFILE,
-      page: () => ProfileView(),
+      name: Routes.PROFILESETTINGS,
+      page: () => ProfileSettingsView(),
     ),
   ];
 }

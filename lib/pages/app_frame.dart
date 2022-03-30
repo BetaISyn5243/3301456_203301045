@@ -1,4 +1,6 @@
 import 'package:betafitness/core.dart';
+import 'package:betafitness/pages/homeview/home_view.dart';
+import 'package:betafitness/pages/profileview/profile_view.dart';
 
 class AppFrame extends StatefulWidget {
   const AppFrame({Key? key}) : super(key: key);

@@ -6,7 +6,7 @@ class HomeHeaderSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 255.h,
+      height: 260.h,
       alignment: Alignment.center,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -25,7 +25,8 @@ class HomeHeaderSection extends StatelessWidget {
                   children: <TextSpan>[
                     TextSpan(
                       text: " " + RegisterController.nameController.text,
-                      style: TextStyle(color: Colors.white),
+                      style: const TextStyle(
+                          color: ColorConstants.kFirstTextColor),
                     )
                   ],
                 ),

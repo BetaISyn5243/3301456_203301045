@@ -1,17 +1,18 @@
 import 'package:betafitness/core.dart';
 
+part 'profile_header.dart';
 part 'profile_meuns_widget.dart';
 part 'profile_split_widget.dart';
 part 'profile_user_informations_widget.dart';
 
 class ProfileView extends StatelessWidget {
   ProfileView({Key? key}) : super(key: key);
-  List<List<Object>> userInformations = [
+  final List<List<Object>> userInformations = [
     [Icons.email_outlined, "Email", "info@batuhanturgut.com.tr"],
     [Icons.phone_outlined, "Phone", "+90-500-000-00-00"],
     [Icons.date_range_outlined, "Birth Of Date", "01-01-2023"]
   ];
-  List<List<Object>> menus = [
+  final List<List<Object>> menus = [
     [Icons.redeem, "Invite Friends"],
     [Icons.shield_outlined, "User Agreement"],
     [Icons.settings_outlined, "Settings"]
@@ -24,34 +25,7 @@ class ProfileView extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            Container(
-              width: ScreenUtil().screenWidth,
-              height: 100.h,
-              decoration: const BoxDecoration(
-                  color: Colors.red,
-                  borderRadius: const BorderRadius.only(
-                      bottomLeft: Radius.circular(30),
-                      bottomRight: Radius.circular(30))),
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  const Icon(Icons.account_circle),
-                  Container(
-                    width: 200.w,
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: const [
-                        Text("data"),
-                        Text("data"),
-                      ],
-                    ),
-                  ),
-                  const Icon(Icons.ac_unit_rounded)
-                ],
-              ),
-            ),
+            const ProfileHeader(),
             Container(
               height: ScreenUtil().screenHeight * 0.8,
               padding: EdgeInsets.only(top: 20.h),
@@ -80,7 +54,7 @@ class ProfileView extends StatelessWidget {
                         children: [
                           Padding(
                             padding: EdgeInsets.symmetric(horizontal: 8.w),
-                            child: Icon(Icons.exit_to_app_outlined,
+                            child: const Icon(Icons.exit_to_app_outlined,
                                 color: ColorConstants.kFirstIconColor),
                           ),
                           Text(

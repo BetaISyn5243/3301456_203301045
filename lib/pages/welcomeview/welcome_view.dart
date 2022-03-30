@@ -1,6 +1,6 @@
 import 'package:betafitness/core.dart';
 
-import 'xcore.dart';
+part 'welcome_text_button.dart';
 
 class WelcomeView extends StatelessWidget {
   const WelcomeView({Key? key}) : super(key: key);
@@ -27,9 +27,9 @@ class WelcomeView extends StatelessWidget {
                       title: TextConstants.welcome,
                       description: TextConstants.splashDescription),
                   SizedBox(height: 30.h),
-                  WelcomeTextButton(1),
+                  const WelcomeTextButton(val: 1),
                   SizedBox(height: 10.h),
-                  WelcomeTextButton(0),
+                  const WelcomeTextButton(val: 0),
                   SizedBox(height: 27.h),
                 ],
               ),

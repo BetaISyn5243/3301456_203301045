@@ -9,6 +9,6 @@ abstract class Routes {
   static const LOGIN = '/login';
   static const FORGET_PASSWORD = '/forget-password';
   static const REGISTER = '/register';
-  static const HOME = '/home';
-  static const PROFILE = '/profile';
+  static const APPFRAME = '/index';
+  static const PROFILESETTINGS = '/profile-settings';
 }

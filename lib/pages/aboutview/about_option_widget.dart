@@ -41,7 +41,7 @@ class AboutOptionWidget extends StatelessWidget {
                   const SizedBox(height: 30),
                   Text(
                     state,
-                    style: TextStyle(
+                    style: const TextStyle(
                         color: ColorConstants.kFirstColor,
                         fontWeight: FontWeight.bold,
                         fontSize: 25),
@@ -69,7 +69,7 @@ class AboutOptionWidget extends StatelessWidget {
                 color: Color(0xFF373850),
               ),
               child: enable
-                  ? Center(
+                  ? const Center(
                       child: Icon(
                         Icons.done,
                         color: ColorConstants.kFirstColor,
