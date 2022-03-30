@@ -10,29 +10,27 @@ class HomeCategoryWidget extends StatelessWidget {
         height: 70.h,
         width: ScreenUtil().screenWidth,
         alignment: Alignment.center,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            Container(
-              height: 30.h,
-              alignment: Alignment.center,
-              width: ScreenUtil().screenWidth - 40.w,
-              child: ValueBuilder<int?>(
-                initialValue: 0,
-                builder: (value, updateFn) => Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    for (var i = 0; i < category.length; i++)
-                      HomeCategoryCardWidget(
-                        title: category[i],
-                        enable: value == i ? true : false,
-                        onTap: () => updateFn(i),
-                      ),
-                  ],
-                ),
+        child: SingleChildScrollView(
+          physics: const BouncingScrollPhysics(),
+          scrollDirection: Axis.horizontal,
+          child: Container(
+            height: 30.h,
+            alignment: Alignment.center,
+            child: ValueBuilder<int?>(
+              initialValue: 0,
+              builder: (value, updateFn) => Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  for (var i = 0; i < category.length; i++)
+                    HomeCategoryCardWidget(
+                      title: category[i],
+                      enable: value == i ? true : false,
+                      onTap: () => updateFn(i),
+                    ),
+                ],
               ),
-            )
-          ],
+            ),
+          ),
         ));
   }
 }
