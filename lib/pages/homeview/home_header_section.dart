@@ -24,7 +24,7 @@ class HomeHeaderSection extends StatelessWidget {
                       letterSpacing: 0.5.sp),
                   children: <TextSpan>[
                     TextSpan(
-                      text: " " + RegisterController.nameController.text,
+                      text: " " + Users.users.last.name,
                       style: const TextStyle(
                           color: ColorConstants.kFirstTextColor),
                     )
