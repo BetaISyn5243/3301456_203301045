@@ -30,13 +30,13 @@ class ProfileSettingsView extends StatelessWidget {
                             flex: 1,
                             child: ProfileTextFieldWidget(
                               title: "Firstname",
-                              hint: TextConstants.nameHint.split(" ")[0],
+                              hint: Users.users.last.name.split(" ")[0],
                             )),
                         Flexible(
                             flex: 1,
                             child: ProfileTextFieldWidget(
                               title: "Lastname",
-                              hint: TextConstants.nameHint.split(" ")[1],
+                              hint: Users.users.last.name.split(" ")[1],
                             )),
                       ],
                     ),

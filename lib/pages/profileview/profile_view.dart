@@ -39,7 +39,7 @@ class ProfileView extends StatelessWidget {
                   Padding(padding: EdgeInsets.only(top: 30.h)),
                   Container(
                     width: ScreenUtil().screenWidth * 0.9,
-                    height: 50.h,
+                    height: 60.h,
                     alignment: Alignment.center,
                     decoration: BoxDecoration(
                       color: ColorConstants.exitBGColor,
