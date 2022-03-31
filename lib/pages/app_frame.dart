@@ -15,10 +15,7 @@ class _AppFrameState extends State<AppFrame> {
       TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
   static final List<Widget> _widgetOptions = <Widget>[
     const HomeView(),
-    const Text(
-      'Index 1: Business',
-      style: optionStyle,
-    ),
+    const WorkoutSearchView(),
     ProfileView(),
   ];
 

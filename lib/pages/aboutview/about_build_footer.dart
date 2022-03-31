@@ -1,3 +1,4 @@
+import 'package:betafitness/core.dart';
 import 'package:betafitness/coregs.dart';
 import 'package:betafitness/utils/xcore.dart';
 
@@ -27,7 +28,7 @@ class AboutBuildFooter extends StatelessWidget {
         ),
         const Spacer(),
         TextButton(
-          onPressed: () {},
+          onPressed: () => Get.toNamed(Routes.APPFRAME),
           child: Container(
             height: 40.h,
             width: 130.w,

@@ -6,3 +6,4 @@ export 'loginview/login_view.dart';
 export 'profilesettings/profile_settings_view.dart';
 export 'registerview/register_view.dart';
 export 'welcomeview/welcome_view.dart';
+export 'workoutsearchview/workout_search_view.dart';
