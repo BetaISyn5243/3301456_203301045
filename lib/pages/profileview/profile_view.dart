@@ -8,8 +8,8 @@ part 'profile_user_informations_widget.dart';
 class ProfileView extends StatelessWidget {
   ProfileView({Key? key}) : super(key: key);
   final List<List<Object>> userInformations = [
-    [Icons.email_outlined, "Email", "info@batuhanturgut.com.tr"],
-    [Icons.phone_outlined, "Phone", "+90-500-000-00-00"],
+    [Icons.email_outlined, "Email", Users.users.last.email],
+    [Icons.phone_outlined, "Phone", Users.users.last.phone],
     [Icons.date_range_outlined, "Birth Of Date", "01-01-2023"]
   ];
   final List<List<Object>> menus = [
@@ -57,11 +57,16 @@ class ProfileView extends StatelessWidget {
                             child: const Icon(Icons.exit_to_app_outlined,
                                 color: ColorConstants.kFirstIconColor),
                           ),
-                          Text(
-                            TextConstants.signOut,
-                            style: TextStyle(
-                                color: ColorConstants.kFirstTextColor,
-                                fontSize: 20.sp),
+                          TextButton(
+                            onPressed: () {
+                              Get.offAllNamed(Routes.WELCOME);
+                            },
+                            child: Text(
+                              TextConstants.signOut,
+                              style: TextStyle(
+                                  color: ColorConstants.kFirstTextColor,
+                                  fontSize: 20.sp),
+                            ),
                           )
                         ],
                       ),

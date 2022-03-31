@@ -1,7 +1,9 @@
 import 'package:betafitness/core.dart';
+
 part 'login_controllers.dart';
 part 'login_forget_button.dart';
 part 'login_form_login.dart';
+part 'login_utils.dart';
 
 @immutable
 class LoginView extends StatelessWidget {
@@ -34,7 +36,21 @@ class LoginView extends StatelessWidget {
                       children: [
                         TextButtonWidget(
                             title: TextConstants.logIn,
-                            press: () => Get.offAllNamed(Routes.APPFRAME),
+                            press: () => !loginCredinantalControl()
+                                ? showDialog(
+                                    context: context,
+                                    builder: (BuildContext context) {
+                                      return alert();
+                                    },
+                                  )
+                                : !loginUsersControl()
+                                    ? showDialog(
+                                        context: context,
+                                        builder: (BuildContext context) {
+                                          return alertKayitOl();
+                                        },
+                                      )
+                                    : Get.offAllNamed(Routes.APPFRAME),
                             color2: ColorConstants.kFirstColor),
                         TextButtonWidget(
                             title: TextConstants.signUp,
@@ -49,6 +65,32 @@ class LoginView extends StatelessWidget {
           ],
         ),
       ),
+    );
+  }
+
+  AlertDialog alert() {
+    return AlertDialog(
+      title: const Text("Invalid Credinantal"),
+      alignment: Alignment.center,
+      actions: <Widget>[
+        ElevatedButton(
+          onPressed: () => Get.back(),
+          child: const Text("Ok"),
+        ),
+      ],
+    );
+  }
+
+  AlertDialog alertKayitOl() {
+    return AlertDialog(
+      title: const Text("Register please"),
+      alignment: Alignment.center,
+      actions: <Widget>[
+        ElevatedButton(
+          onPressed: () => Get.back(),
+          child: const Text("Ok"),
+        ),
+      ],
     );
   }
 }

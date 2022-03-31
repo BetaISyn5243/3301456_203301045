@@ -23,7 +23,7 @@ class ProfileHeader extends StatelessWidget {
           SizedBox(
             width: 200.w,
             child: Text(
-              TextConstants.nameHint,
+              Users.users.last.name,
               style: TextStyle(fontSize: 20.sp),
             ),
           ),
