@@ -39,7 +39,8 @@ class PrimaryWorkoutWidget extends StatelessWidget {
                 height: 40.h,
                 alignment: Alignment.center,
                 child: Text(title,
-                    style: TextStyle(color: ColorConstants.kFirstTextColor)),
+                    style:
+                        const TextStyle(color: ColorConstants.kFirstTextColor)),
               ),
             ],
           ),

@@ -19,7 +19,7 @@ class WorkoutSearchView extends StatelessWidget {
               children: [
                 Container(
                   alignment: Alignment.center,
-                  margin: EdgeInsets.only(top: 20),
+                  margin: EdgeInsets.only(top: 20.h),
                   height: 50.h,
                   width: 330.w,
                   decoration: BoxDecoration(
