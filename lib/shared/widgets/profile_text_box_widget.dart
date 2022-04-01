@@ -39,7 +39,7 @@ class ProfileTextBoxWidget extends StatelessWidget {
               ),
               (description != "null")
                   ? Text(description,
-                      style: TextStyle(color: ColorConstants.kFirstTextColor))
+                      style: const TextStyle(color: ColorConstants.kFirstTextColor))
                   : const SizedBox(height: 0, width: 0),
             ],
           )

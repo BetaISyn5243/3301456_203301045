@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
       minTextAdapt: true,
       splitScreenMode: true,
       builder: () => GetMaterialApp(
-        title: "Aqua Workout App",
+        title: "Beta Fitness",
         themeMode: ThemeMode.dark,
         theme: ThemeData.dark().copyWith(
           primaryColor: Colors.blue,

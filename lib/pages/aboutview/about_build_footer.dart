@@ -1,6 +1,4 @@
 import 'package:betafitness/core.dart';
-import 'package:betafitness/coregs.dart';
-import 'package:betafitness/utils/xcore.dart';
 
 class AboutBuildFooter extends StatelessWidget {
   const AboutBuildFooter({Key? key}) : super(key: key);

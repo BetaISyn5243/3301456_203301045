@@ -68,7 +68,10 @@ class RegisterActionButton extends StatelessWidget {
       actions: <Widget>[
         ElevatedButton(
           onPressed: () => Get.back(),
-          child: Text("Ok"),
+          child: const Text(
+            "Ok",
+            style: TextStyle(color: ColorConstants.kFirstTextColor),
+          ),
         ),
       ],
     );
@@ -82,7 +85,10 @@ class RegisterActionButton extends StatelessWidget {
       actions: <Widget>[
         ElevatedButton(
           onPressed: () => Get.back(),
-          child: Text("Ok"),
+          child: const Text(
+            "Ok",
+            style: TextStyle(color: ColorConstants.kFirstTextColor),
+          ),
         ),
       ],
     );

@@ -1,6 +1,4 @@
 import 'package:betafitness/core.dart';
-import 'package:betafitness/utils/color_constants.dart';
-import 'package:flutter/rendering.dart';
 
 part 'profile_settings_header.dart';
 part 'profile_text_field_widget.dart';
@@ -62,9 +60,9 @@ class ProfileSettingsView extends StatelessWidget {
                             )),
                       ],
                     ),
-                    ProfileTextFieldWidget(
+                    const ProfileTextFieldWidget(
                         title: TextConstants.username, hint: "BetaISyn5243"),
-                    ProfileTextFieldWidget(
+                    const ProfileTextFieldWidget(
                         title: TextConstants.username, hint: "BetaISyn5243"),
                   ],
                 ),

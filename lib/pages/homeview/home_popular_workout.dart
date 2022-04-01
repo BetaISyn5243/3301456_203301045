@@ -20,7 +20,7 @@ class HomePopularWorkout extends StatelessWidget {
         SizedBox(
           height: 10.h,
         ),
-        Container(
+        SizedBox(
           height: 200.h,
           width: ScreenUtil().screenWidth,
           child: ListView.builder(

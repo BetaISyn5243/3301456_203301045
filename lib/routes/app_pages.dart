@@ -34,11 +34,11 @@ class AppPages {
     ),
     GetPage(
       name: Routes.PROFILESETTINGS,
-      page: () => ProfileSettingsView(),
+      page: () => const ProfileSettingsView(),
     ),
     GetPage(
       name: Routes.WORKOUT,
-      page: () => WorkoutView(),
+      page: () => const WorkoutView(),
     ),
   ];
 }
