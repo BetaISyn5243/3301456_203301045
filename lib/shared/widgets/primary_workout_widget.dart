@@ -1,4 +1,5 @@
 import 'package:betafitness/coregs.dart';
+import 'package:betafitness/utils/color_constants.dart';
 
 class PrimaryWorkoutWidget extends StatelessWidget {
   const PrimaryWorkoutWidget({
@@ -37,7 +38,8 @@ class PrimaryWorkoutWidget extends StatelessWidget {
                 width: 110.w,
                 height: 40.h,
                 alignment: Alignment.center,
-                child: Text(title),
+                child: Text(title,
+                    style: TextStyle(color: ColorConstants.kFirstTextColor)),
               ),
             ],
           ),

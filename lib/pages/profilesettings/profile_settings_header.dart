@@ -27,7 +27,7 @@ class ProfileSettingsHeader extends StatelessWidget {
                     onPressed: () => Get.back(),
                     icon: Icon(
                       Icons.arrow_back,
-                      size: 30.w,
+                      size: 30.h,
                     ),
                   ),
                 ),
@@ -45,7 +45,7 @@ class ProfileSettingsHeader extends StatelessWidget {
             ),
             Icon(
               Icons.account_circle,
-              size: 90.w,
+              size: 90.h,
             ),
             Padding(
               padding: EdgeInsets.only(bottom: 15.0.h),

@@ -35,7 +35,7 @@ class WorkoutView extends StatelessWidget {
                   Padding(
                     padding: EdgeInsets.only(
                       top: 25.h,
-                      left: 10,
+                      left: 10.w,
                     ),
                     child: Container(
                       alignment: Alignment.center,
@@ -58,9 +58,17 @@ class WorkoutView extends StatelessWidget {
                               child: Row(
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
-                                children: const [
-                                  Icon(Icons.access_time_rounded),
-                                  Text("2 Hours")
+                                children: [
+                                  Icon(
+                                    Icons.access_time_rounded,
+                                    size: 30.h,
+                                  ),
+                                  Text(
+                                    "2 Hours",
+                                    style: TextStyle(
+                                        color: ColorConstants.kFirstTextColor,
+                                        fontSize: 20.sp),
+                                  )
                                 ],
                               ),
                             ),
@@ -69,7 +77,7 @@ class WorkoutView extends StatelessWidget {
                               height: 50.h,
                               alignment: Alignment.center,
                               child: IconButton(
-                                  iconSize: 40,
+                                  iconSize: 40.h,
                                   enableFeedback: false,
                                   onPressed: () => Get.back(),
                                   icon: const Icon(
@@ -88,8 +96,10 @@ class WorkoutView extends StatelessWidget {
                 child: Container(
                   child: Text(
                     "Combine Exercises",
-                    style:
-                        TextStyle(fontSize: 30.sp, fontWeight: FontWeight.bold),
+                    style: TextStyle(
+                        fontSize: 30.sp,
+                        fontWeight: FontWeight.bold,
+                        color: ColorConstants.kFirstTextColor),
                   ),
                 ),
               )

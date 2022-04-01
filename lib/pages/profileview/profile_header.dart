@@ -19,12 +19,13 @@ class ProfileHeader extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          Icon(Icons.account_circle, size: 40.w),
+          Icon(Icons.account_circle, size: 40.h),
           SizedBox(
             width: 200.w,
             child: Text(
               Users.users.last.name,
-              style: TextStyle(fontSize: 20.sp),
+              style: TextStyle(
+                  fontSize: 20.sp, color: ColorConstants.kFirstTextColor),
             ),
           ),
           IconButton(
@@ -33,7 +34,7 @@ class ProfileHeader extends StatelessWidget {
             },
             icon: Icon(
               Icons.edit_outlined,
-              size: 27.w,
+              size: 27.h,
             ),
           ),
         ],

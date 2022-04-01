@@ -70,7 +70,8 @@ class LoginView extends StatelessWidget {
 
   AlertDialog alert() {
     return AlertDialog(
-      title: const Text("Invalid Credinantal"),
+      title: const Text("Invalid Credinantal",
+          style: TextStyle(color: ColorConstants.kFirstTextColor)),
       alignment: Alignment.center,
       actions: <Widget>[
         ElevatedButton(
@@ -83,7 +84,8 @@ class LoginView extends StatelessWidget {
 
   AlertDialog alertKayitOl() {
     return AlertDialog(
-      title: const Text("Register please"),
+      title: const Text("Register please",
+          style: TextStyle(color: ColorConstants.kFirstTextColor)),
       alignment: Alignment.center,
       actions: <Widget>[
         ElevatedButton(
