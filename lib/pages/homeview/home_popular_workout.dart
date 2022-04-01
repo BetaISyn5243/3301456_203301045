@@ -4,6 +4,7 @@ class HomePopularWorkout extends StatelessWidget {
   const HomePopularWorkout({Key? key, required this.workouts})
       : super(key: key);
   final List<List<Object>> workouts;
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -19,17 +20,17 @@ class HomePopularWorkout extends StatelessWidget {
         SizedBox(
           height: 10.h,
         ),
-        SingleChildScrollView(
-          scrollDirection: Axis.horizontal,
-          physics: const BouncingScrollPhysics(),
-          child: Row(
-            children: [
-              for (var i = 0; i < workouts.length; i++)
-                HomeWorkoutWidget(
-                    title: workouts[i][0] as String,
-                    image: workouts[i][1] as ImageProvider,
-                    route: Routes.REGISTER)
-            ],
+        Container(
+          height: 200.h,
+          width: ScreenUtil().screenWidth,
+          child: ListView.builder(
+            physics: const BouncingScrollPhysics(),
+            itemCount: workouts.length,
+            scrollDirection: Axis.horizontal,
+            itemBuilder: (context, val) => PrimaryWorkoutWidget(
+                title: workouts[val][0] as String,
+                image: workouts[val][1] as ImageProvider,
+                route: Routes.WORKOUT),
           ),
         )
       ],

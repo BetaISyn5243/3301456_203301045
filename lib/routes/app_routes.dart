@@ -11,4 +11,5 @@ abstract class Routes {
   static const REGISTER = '/register';
   static const APPFRAME = '/index';
   static const PROFILESETTINGS = '/profile-settings';
+  static const WORKOUT = '/workout';
 }

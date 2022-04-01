@@ -1,7 +1,7 @@
-part of 'home_view.dart';
+import 'package:betafitness/coregs.dart';
 
-class HomeWorkoutWidget extends StatelessWidget {
-  const HomeWorkoutWidget({
+class PrimaryWorkoutWidget extends StatelessWidget {
+  const PrimaryWorkoutWidget({
     Key? key,
     required this.title,
     required this.image,

@@ -5,7 +5,6 @@ part 'home_category_widget.dart';
 part 'home_header_section.dart';
 part 'home_popular_workout.dart';
 part 'home_search_box.dart';
-part 'home_workout_card.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({Key? key}) : super(key: key);
