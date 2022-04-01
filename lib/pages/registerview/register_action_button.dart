@@ -60,7 +60,10 @@ class RegisterActionButton extends StatelessWidget {
 
   AlertDialog alert() {
     return AlertDialog(
-      title: const Text("Invalid Credinantal"),
+      title: const Text(
+        "Invalid Credinantal",
+        style: TextStyle(color: ColorConstants.kFirstTextColor),
+      ),
       alignment: Alignment.center,
       actions: <Widget>[
         ElevatedButton(
@@ -73,7 +76,8 @@ class RegisterActionButton extends StatelessWidget {
 
   AlertDialog alertPassNotMatch() {
     return AlertDialog(
-      title: const Text("Passwords not equal"),
+      title: const Text("Passwords not equal",
+          style: TextStyle(color: ColorConstants.kFirstTextColor)),
       alignment: Alignment.center,
       actions: <Widget>[
         ElevatedButton(

@@ -1,3 +1,4 @@
+import 'package:betafitness/utils/color_constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -23,7 +24,7 @@ class ProfileTextBoxWidget extends StatelessWidget {
             padding: EdgeInsets.all(10.h),
             child: Icon(
               icon,
-              size: 30.w,
+              size: 30.h,
             ),
           ),
           Column(
@@ -32,10 +33,13 @@ class ProfileTextBoxWidget extends StatelessWidget {
             children: [
               Text(
                 title,
-                style: const TextStyle(fontWeight: FontWeight.bold),
+                style: const TextStyle(
+                    fontWeight: FontWeight.bold,
+                    color: ColorConstants.kFirstTextColor),
               ),
               (description != "null")
-                  ? Text(description)
+                  ? Text(description,
+                      style: TextStyle(color: ColorConstants.kFirstTextColor))
                   : const SizedBox(height: 0, width: 0),
             ],
           )

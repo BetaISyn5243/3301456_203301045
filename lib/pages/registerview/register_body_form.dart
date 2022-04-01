@@ -45,7 +45,10 @@ class RegisterBodyForm extends StatelessWidget {
             textInputType: TextInputType.visiblePassword,
           ),
           SizedBox(height: 20.h),
-          const Text(TextConstants.policyAgreement),
+          const Text(
+            TextConstants.policyAgreement,
+            style: TextStyle(color: ColorConstants.kFirstTextColor),
+          ),
           SizedBox(height: 20.h)
         ],
       ),

@@ -34,10 +34,10 @@ class BodyHeader extends StatelessWidget {
       height: Get.height * 0.55,
       width: Get.width,
       child: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
+        padding: EdgeInsets.symmetric(vertical: 20.h, horizontal: 20.w),
         child: Column(
           children: [
-            const SizedBox(height: 30),
+            SizedBox(height: 30.h),
             const HeaderReachText(),
             const Spacer(),
             Align(
@@ -47,16 +47,17 @@ class BodyHeader extends StatelessWidget {
                 children: [
                   Text(
                     title,
-                    style: const TextStyle(
-                      fontSize: 40,
-                      color: Colors.white,
+                    style: TextStyle(
+                      fontSize: 40.sp,
+                      color: ColorConstants.kFirstTextColor,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  const SizedBox(height: 20),
+                  SizedBox(height: 20.h),
                   Text(
                     subtitle,
-                    style: const TextStyle(fontSize: 20),
+                    style: TextStyle(
+                        fontSize: 20.sp, color: ColorConstants.kFirstTextColor),
                   ),
                 ],
               ),

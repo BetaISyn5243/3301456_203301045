@@ -10,7 +10,10 @@ class HeaderReachText extends StatelessWidget {
       text: TextSpan(
         text: TextConstants.splashFirst,
         style: TextStyle(
-            fontFamily: "Bebas", fontSize: 30.sp, letterSpacing: 5.sp),
+            fontFamily: "Bebas",
+            fontSize: 30.sp,
+            letterSpacing: 5.sp,
+            color: ColorConstants.kFirstTextColor),
         children: const <TextSpan>[
           TextSpan(
             text: TextConstants.splashSecond,
