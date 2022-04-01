@@ -48,7 +48,9 @@ class ProfileView extends StatelessWidget {
                       ),
                     ),
                     child: TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Get.offAllNamed(Routes.WELCOME);
+                      },
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
@@ -57,16 +59,11 @@ class ProfileView extends StatelessWidget {
                             child: const Icon(Icons.exit_to_app_outlined,
                                 color: ColorConstants.kFirstIconColor),
                           ),
-                          TextButton(
-                            onPressed: () {
-                              Get.offAllNamed(Routes.WELCOME);
-                            },
-                            child: Text(
-                              TextConstants.signOut,
-                              style: TextStyle(
-                                  color: ColorConstants.kFirstTextColor,
-                                  fontSize: 20.sp),
-                            ),
+                          Text(
+                            TextConstants.signOut,
+                            style: TextStyle(
+                                color: ColorConstants.kFirstTextColor,
+                                fontSize: 20.sp),
                           )
                         ],
                       ),
