@@ -36,5 +36,9 @@ class AppPages {
       name: Routes.PROFILESETTINGS,
       page: () => ProfileSettingsView(),
     ),
+    GetPage(
+      name: Routes.WORKOUT,
+      page: () => WorkoutView(),
+    ),
   ];
 }
