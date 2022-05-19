@@ -33,6 +33,7 @@ abstract class TextConstants {
   static const String emailHint = "info@batuhanturgut.com.tr";
   static const String phoneHint = "+90 500-000-00-00";
   static const String nameHint = "Batuhan Turgut";
+  static const String usernameHint = "BetaISyn5243";
 
   //Login Screen
   static const String loginAbout =

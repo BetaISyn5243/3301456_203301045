@@ -1,5 +1,6 @@
 import 'package:betafitness/core.dart';
 
+part 'profile_settings_controllers.dart';
 part 'profile_settings_header.dart';
 part 'profile_text_field_widget.dart';
 
@@ -29,41 +30,51 @@ class ProfileSettingsView extends StatelessWidget {
                             child: ProfileTextFieldWidget(
                               title: "Firstname",
                               hint: Users.users.last.name.split(" ")[0],
+                              textEditingController:
+                                  ProfileSettingsController.firstNameController,
                             )),
                         Flexible(
                             flex: 1,
                             child: ProfileTextFieldWidget(
                               title: "Lastname",
                               hint: Users.users.last.name.split(" ")[1],
+                              textEditingController:
+                                  ProfileSettingsController.lastNameController,
                             )),
                       ],
                     ),
-                    const ProfileTextFieldWidget(
-                        title: TextConstants.username, hint: "BetaISyn5243"),
-                    const ProfileTextFieldWidget(
+                    ProfileTextFieldWidget(
+                      title: TextConstants.username,
+                      hint: "BetaISyn5243",
+                      textEditingController:
+                          ProfileSettingsController.usernameController,
+                    ),
+                    ProfileTextFieldWidget(
                       title: "Phone Number",
                       hint: TextConstants.phoneHint,
+                      textEditingController:
+                          ProfileSettingsController.phoneNumberController,
                     ),
                     Row(
-                      children: const [
+                      children: [
                         Flexible(
                             flex: 1,
                             child: ProfileTextFieldWidget(
                               title: "Date of Birth",
                               hint: "01-01-2023",
+                              textEditingController: ProfileSettingsController
+                                  .dateOfBirthController,
                             )),
                         Flexible(
                             flex: 1,
                             child: ProfileTextFieldWidget(
                               title: "Gender",
                               hint: "male",
+                              textEditingController:
+                                  ProfileSettingsController.genderController,
                             )),
                       ],
                     ),
-                    const ProfileTextFieldWidget(
-                        title: TextConstants.username, hint: "BetaISyn5243"),
-                    const ProfileTextFieldWidget(
-                        title: TextConstants.username, hint: "BetaISyn5243"),
                   ],
                 ),
               ),

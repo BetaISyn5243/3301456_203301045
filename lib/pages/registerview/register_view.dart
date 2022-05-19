@@ -3,6 +3,7 @@ import 'package:betafitness/core.dart';
 part 'register_action_button.dart';
 part 'register_body_form.dart';
 part 'register_controller.dart';
+part 'register_dialogs.dart';
 part 'register_utils.dart';
 
 @immutable

@@ -17,6 +17,12 @@ class RegisterBodyForm extends StatelessWidget {
               textInputType: TextInputType.name),
           SizedBox(height: 20.h),
           TextFieldWidget(
+              labelText: TextConstants.username,
+              hintText: TextConstants.usernameHint,
+              controller: RegisterController.usernameController,
+              textInputType: TextInputType.text),
+          SizedBox(height: 20.h),
+          TextFieldWidget(
               labelText: TextConstants.email,
               hintText: TextConstants.emailHint,
               controller: RegisterController.emailController,

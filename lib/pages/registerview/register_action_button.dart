@@ -14,18 +14,18 @@ class RegisterActionButton extends StatelessWidget {
             TextButtonWidget(
                 title: TextConstants.register,
                 press: () => {
-                      !registerCredinantalControl()
+                      !registerCredentialControl()
                           ? showDialog(
                               context: context,
                               builder: (BuildContext context) {
-                                return alert();
+                                return alertInvalidCredential();
                               },
                             )
-                          : !registerPasswordController()
+                          : !registerPasswordEqualController()
                               ? showDialog(
                                   context: context,
                                   builder: (BuildContext context) {
-                                    return alertPassNotMatch();
+                                    return alertPasswordsNotEqual();
                                   },
                                 )
                               : {
@@ -33,6 +33,9 @@ class RegisterActionButton extends StatelessWidget {
                                     User(
                                         name: RegisterController
                                             .nameController.text
+                                            .toString(),
+                                        username: RegisterController
+                                            .usernameController.text
                                             .toString(),
                                         phone: RegisterController
                                             .phoneController.text
@@ -55,42 +58,6 @@ class RegisterActionButton extends StatelessWidget {
           ],
         ),
       ),
-    );
-  }
-
-  AlertDialog alert() {
-    return AlertDialog(
-      title: const Text(
-        "Invalid Credinantal",
-        style: TextStyle(color: ColorConstants.kFirstTextColor),
-      ),
-      alignment: Alignment.center,
-      actions: <Widget>[
-        ElevatedButton(
-          onPressed: () => Get.back(),
-          child: const Text(
-            "Ok",
-            style: TextStyle(color: ColorConstants.kFirstTextColor),
-          ),
-        ),
-      ],
-    );
-  }
-
-  AlertDialog alertPassNotMatch() {
-    return AlertDialog(
-      title: const Text("Passwords not equal",
-          style: TextStyle(color: ColorConstants.kFirstTextColor)),
-      alignment: Alignment.center,
-      actions: <Widget>[
-        ElevatedButton(
-          onPressed: () => Get.back(),
-          child: const Text(
-            "Ok",
-            style: TextStyle(color: ColorConstants.kFirstTextColor),
-          ),
-        ),
-      ],
     );
   }
 }
