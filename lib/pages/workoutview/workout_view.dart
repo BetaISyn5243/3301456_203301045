@@ -17,7 +17,7 @@ class WorkoutView extends StatelessWidget {
                   SizedBox(
                     height: ScreenUtil().screenHeight * 0.55,
                     child: const BackgroundImageWidget(
-                        imagePath: "assets/images/black/10.jpg"),
+                        imagePath: "assets/images/black/11.jpg"),
                   ),
                   Container(
                     decoration: const BoxDecoration(
@@ -46,7 +46,7 @@ class WorkoutView extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Container(
-                              width: 85.w,
+                              width: 120.w,
                               padding: EdgeInsets.symmetric(
                                   vertical: 3.h, horizontal: 8.w),
                               decoration: BoxDecoration(
@@ -94,12 +94,27 @@ class WorkoutView extends StatelessWidget {
               Padding(
                 padding: EdgeInsets.symmetric(vertical: 10.h, horizontal: 20.w),
                 child: Container(
-                  child: Text(
-                    "Combine Exercises",
-                    style: TextStyle(
-                        fontSize: 30.sp,
-                        fontWeight: FontWeight.bold,
-                        color: ColorConstants.kFirstTextColor),
+                  child:  Column(
+                    children: [
+                      Text(
+                        "Combine Exercises",
+                        style: TextStyle(
+                            fontSize: 30.sp,
+                            fontWeight: FontWeight.bold,
+                            color: ColorConstants.kFirstTextColor),
+                      ),
+                      Container(
+                        alignment: Alignment.centerLeft,
+                        child: Text(
+                          "Exercise are fun!",
+                          style: TextStyle(
+                              fontSize: 12.sp,
+
+                              fontWeight: FontWeight.normal,
+                              color: ColorConstants.kFirstTextColor),
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               )

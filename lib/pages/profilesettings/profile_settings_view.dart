@@ -23,26 +23,33 @@ class ProfileSettingsView extends StatelessWidget {
                 padding: EdgeInsets.symmetric(horizontal: 20.w),
                 child: Column(
                   children: [
-                    Row(
-                      children: [
-                        Flexible(
-                            flex: 1,
-                            child: ProfileTextFieldWidget(
-                              title: "Firstname",
-                              hint: Users.users.last.name.split(" ")[0],
-                              textEditingController:
-                                  ProfileSettingsController.firstNameController,
-                            )),
-                        Flexible(
-                            flex: 1,
-                            child: ProfileTextFieldWidget(
-                              title: "Lastname",
-                              hint: Users.users.last.name.split(" ")[1],
-                              textEditingController:
-                                  ProfileSettingsController.lastNameController,
-                            )),
-                      ],
+                    FutureBuilder(future: Users().getUser(),
+                        builder: (builder,AsyncSnapshot<UserModel> snap){
+                          return Row(
+                            children: [
+
+
+                              Flexible(
+                                  flex: 1,
+                                  child: ProfileTextFieldWidget(
+                                    title: "Firstname",
+                                    hint: snap.data!.name.split(" ")[0],
+                                    textEditingController:
+                                    ProfileSettingsController.firstNameController,
+                                  )),
+                              Flexible(
+                                  flex: 1,
+                                  child: ProfileTextFieldWidget(
+                                    title: "Lastname",
+                                    hint: snap.data!.name.split(" ")[1],
+                                    textEditingController:
+                                    ProfileSettingsController.lastNameController,
+                                  )),
+                            ],
+                          );
+                        }
                     ),
+
                     ProfileTextFieldWidget(
                       title: TextConstants.username,
                       hint: "BetaISyn5243",

@@ -1,4 +1,9 @@
 import 'package:betafitness/core.dart';
+import 'package:betafitness/models/database_handler.dart';
+import 'package:betafitness/models/report.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:betafitness/utils/Globals.dart' as globals;
 
 part 'register_action_button.dart';
 part 'register_body_form.dart';

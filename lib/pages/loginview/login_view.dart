@@ -1,5 +1,8 @@
 import 'package:betafitness/core.dart';
 
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:betafitness/utils/Globals.dart' as globals;
+
 part 'login_controllers.dart';
 part 'login_forget_button.dart';
 part 'login_form_login.dart';
@@ -43,14 +46,7 @@ class LoginView extends StatelessWidget {
                                       return alert();
                                     },
                                   )
-                                : !loginUsersControl()
-                                    ? showDialog(
-                                        context: context,
-                                        builder: (BuildContext context) {
-                                          return alertKayitOl();
-                                        },
-                                      )
-                                    : Get.offAllNamed(Routes.APPFRAME),
+                                : loginControl(),
                             color2: ColorConstants.kFirstColor),
                         TextButtonWidget(
                             title: TextConstants.signUp,

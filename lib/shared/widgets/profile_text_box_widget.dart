@@ -1,3 +1,4 @@
+import 'package:betafitness/core.dart';
 import 'package:betafitness/utils/color_constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -31,15 +32,27 @@ class ProfileTextBoxWidget extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                title,
-                style: const TextStyle(
-                    fontWeight: FontWeight.bold,
-                    color: ColorConstants.kFirstTextColor),
+              InkWell(
+                onTap: () => {
+                  title.toString() == "Invite Friends"
+                      ? Get.toNamed(Routes.INVITE)
+                      : title.toString() == "User Agreement"
+                          ? Get.toNamed(Routes.USERAGREEMENT)
+                      : title.toString() == "Settings"
+                      ? Get.toNamed(Routes.SETTINGS)
+                          : null
+                },
+                child: Text(
+                  title,
+                  style: const TextStyle(
+                      fontWeight: FontWeight.bold,
+                      color: ColorConstants.kFirstTextColor),
+                ),
               ),
               (description != "null")
                   ? Text(description,
-                      style: const TextStyle(color: ColorConstants.kFirstTextColor))
+                      style: const TextStyle(
+                          color: ColorConstants.kFirstTextColor))
                   : const SizedBox(height: 0, width: 0),
             ],
           )

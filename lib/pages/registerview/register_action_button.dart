@@ -29,25 +29,8 @@ class RegisterActionButton extends StatelessWidget {
                                   },
                                 )
                               : {
-                                  Users.users.add(
-                                    User(
-                                        name: RegisterController
-                                            .nameController.text
-                                            .toString(),
-                                        username: RegisterController
-                                            .usernameController.text
-                                            .toString(),
-                                        phone: RegisterController
-                                            .phoneController.text
-                                            .toString(),
-                                        password: RegisterController
-                                            .passwordController1.text
-                                            .toString(),
-                                        email: RegisterController
-                                            .emailController.text
-                                            .toString()),
-                                  ),
-                                  Get.offAllNamed(Routes.APPFRAME),
+                            registerControl(),
+
                                 }
                     },
                 color2: ColorConstants.kFirstColor),
