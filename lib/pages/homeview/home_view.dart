@@ -1,4 +1,5 @@
 import 'package:betafitness/core.dart';
+import 'package:betafitness/pages/profileview/profile_view.dart';
 
 part 'home_category_card_widget.dart';
 part 'home_category_widget.dart';
@@ -11,6 +12,7 @@ class HomeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    ProfileView.deneme();
     const List<String> category = [
       "Popular",
       "Hard workout",
@@ -21,10 +23,7 @@ class HomeView extends StatelessWidget {
       ["Dribble Exercises", AssetImage("assets/images/black/10.jpg")],
       ["Combine Exercises", AssetImage("assets/images/black/11.jpg")],
       ["Push-Up Exercises", AssetImage("assets/images/black/12.jpg")],
-      ["Push-Up Exercises", AssetImage("assets/images/black/12.jpg")],
-      ["Push-Up Exercises", AssetImage("assets/images/black/12.jpg")],
-      ["Push-Up Exercises", AssetImage("assets/images/black/12.jpg")],
-      ["Push-Up Exercises", AssetImage("assets/images/black/12.jpg")],
+
     ];
     return Scaffold(
       backgroundColor: ColorConstants.kThirdColor,
@@ -71,4 +70,41 @@ class HomeView extends StatelessWidget {
       ),
     );
   }
+
+}
+AlertDialog alertLongPress() {
+  return AlertDialog(
+    title: const Text(
+      "Uzun Basmak Hiç bişi yapmaz",
+      style: TextStyle(color: ColorConstants.kFirstTextColor),
+    ),
+    alignment: Alignment.center,
+    actions: [
+      ElevatedButton(
+        onPressed: () => Get.back(),
+        child: const Text(
+          "Ok",
+          style: TextStyle(color: ColorConstants.kFirstTextColor),
+        ),
+      ),
+    ],
+  );
+}
+AlertDialog alertDoubleTap() {
+  return AlertDialog(
+    title: const Text(
+      "' kez tıklamak hiç bişi yapmaz'",
+      style: TextStyle(color: ColorConstants.kFirstTextColor),
+    ),
+    alignment: Alignment.center,
+    actions: [
+      ElevatedButton(
+        onPressed: () => Get.back(),
+        child: const Text(
+          "Ok",
+          style: TextStyle(color: ColorConstants.kFirstTextColor),
+        ),
+      ),
+    ],
+  );
 }

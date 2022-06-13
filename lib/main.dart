@@ -1,6 +1,8 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/services.dart';
 
 import 'core.dart';
+import 'firebase_options.dart';
 
 Future<void> main() async {
   SystemChrome.setSystemUIOverlayStyle(
@@ -8,6 +10,9 @@ Future<void> main() async {
 
   /// Make sure you add this line here, so the plugin can access the native side
   WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
 
   runApp(const MyApp());
 }
@@ -21,7 +26,7 @@ class MyApp extends StatelessWidget {
       designSize: const Size(360, 690),
       minTextAdapt: true,
       splitScreenMode: true,
-      builder: () => GetMaterialApp(
+      builder: (BuildContext c,child) => GetMaterialApp(
         title: "Beta Fitness",
         themeMode: ThemeMode.dark,
         theme: ThemeData.dark().copyWith(

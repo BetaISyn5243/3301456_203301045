@@ -1,4 +1,6 @@
 import 'package:betafitness/core.dart';
+import 'package:betafitness/utils/Globals.dart' as globals;
+import 'package:firebase_auth/firebase_auth.dart';
 
 part 'profile_header.dart';
 part 'profile_meuns_widget.dart';
@@ -7,11 +9,13 @@ part 'profile_user_informations_widget.dart';
 
 class ProfileView extends StatelessWidget {
   ProfileView({Key? key}) : super(key: key);
-  final List<List<Object>> userInformations = [
-    [Icons.email_outlined, "Email", Users.users.last.email],
-    [Icons.phone_outlined, "Phone", Users.users.last.phone],
-    [Icons.date_range_outlined, "Birth Of Date", "01-01-2023"]
+  static final List<List<Object>> userInformations = [ [Icons.date_range_outlined, "Birth Of Date", "01-01-2023"]
   ];
+  static deneme ()=>Users().getUser().then((value) => userInformations.length<3? userInformations.addAll([
+    [Icons.email_outlined, "Email", value.email ],
+    [Icons.phone_outlined, "Phone", value.phone],
+  ]):null);
+
   final List<List<Object>> menus = [
     [Icons.redeem, "Invite Friends"],
     [Icons.shield_outlined, "User Agreement"],
@@ -49,6 +53,7 @@ class ProfileView extends StatelessWidget {
                     ),
                     child: TextButton(
                       onPressed: () {
+                        FirebaseAuth.instance.signOut();
                         Get.offAllNamed(Routes.WELCOME);
                       },
                       child: Row(

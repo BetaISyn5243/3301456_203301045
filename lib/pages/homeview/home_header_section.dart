@@ -14,33 +14,73 @@ class HomeHeaderSection extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              RichText(
-                text: TextSpan(
-                  text: TextConstants.hey,
-                  style: TextStyle(
-                      fontSize: 23.sp,
-                      fontWeight: FontWeight.w600,
-                      color: ColorConstants.kFirstColor,
-                      letterSpacing: 0.5.sp),
-                  children: <TextSpan>[
-                    TextSpan(
-                      text: " " + Users.users.last.name,
-                      style: const TextStyle(
-                          color: ColorConstants.kFirstTextColor),
-                    )
-                  ],
-                ),
-              ),
+              FutureBuilder(
+                  future: Users().getUser(),
+                  builder: (builder, AsyncSnapshot<UserModel> snap) {
+                    if (snap.hasData){
+                      return RichText(
+                        text: TextSpan(
+                          text: TextConstants.hey,
+                          style: TextStyle(
+                              fontSize: 23.sp,
+                              fontWeight: FontWeight.w600,
+                              color: ColorConstants.kFirstColor,
+                              letterSpacing: 0.5.sp),
+                          children: [
+                            TextSpan(
+                              text: " " + snap.data!.name,
+                              style: const TextStyle(
+                                  color: ColorConstants.kFirstTextColor),
+                            )
+                          ],
+                        ),
+                      );
+                    }
+                    else{
+                      return RichText(
+                        text: TextSpan(
+                          text: TextConstants.hey,
+                          style: TextStyle(
+                              fontSize: 23.sp,
+                              fontWeight: FontWeight.w600,
+                              color: ColorConstants.kFirstColor,
+                              letterSpacing: 0.5.sp),
+                          children: [
+                            TextSpan(
+                              text: " " + "def",
+                              style: const TextStyle(
+                                  color: ColorConstants.kFirstTextColor),
+                            )
+                          ],
+                        ),
+                      );
+
+                    }
+                  }),
               Icon(
                 Icons.account_circle,
                 size: 45.sp,
               )
             ],
           ),
-          Icon(
-            Icons.arrow_circle_right_outlined,
-            color: ColorConstants.kFirstColor,
-            size: 80.sp,
+          InkWell(
+            onLongPress: ()=>{showDialog(
+            context: Get.context!,
+            builder: (BuildContext context) {
+            return alertLongPress();
+            },
+            )},
+            onDoubleTap: ()=>{showDialog(
+            context: Get.context!,
+            builder: (BuildContext context) {
+            return alertDoubleTap();
+            },
+            )},
+            child: Icon(
+              Icons.arrow_circle_right_outlined,
+              color: ColorConstants.kFirstColor,
+              size: 80.sp,
+            ),
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,

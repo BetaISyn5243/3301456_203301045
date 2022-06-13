@@ -3,6 +3,8 @@ part of 'register_view.dart';
 class RegisterController {
   static final TextEditingController nameController = TextEditingController();
   static final TextEditingController emailController = TextEditingController();
+  static final TextEditingController usernameController =
+      TextEditingController();
   static final TextEditingController phoneController = TextEditingController();
   static final TextEditingController passwordController1 =
       TextEditingController();

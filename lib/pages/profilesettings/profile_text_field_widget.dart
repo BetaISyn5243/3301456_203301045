@@ -2,10 +2,14 @@ part of 'profile_settings_view.dart';
 
 class ProfileTextFieldWidget extends StatelessWidget {
   const ProfileTextFieldWidget(
-      {Key? key, required this.title, required this.hint})
+      {Key? key,
+      required this.title,
+      required this.hint,
+      required this.textEditingController})
       : super(key: key);
   final String title;
   final String hint;
+  final TextEditingController textEditingController;
 
   @override
   Widget build(BuildContext context) {
@@ -25,6 +29,7 @@ class ProfileTextFieldWidget extends StatelessWidget {
             ),
           ),
           TextFormField(
+            controller: textEditingController,
             decoration: InputDecoration(
               hintText: hint,
               hintStyle: TextStyle(fontSize: 14.sp),

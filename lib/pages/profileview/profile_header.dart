@@ -20,13 +20,29 @@ class ProfileHeader extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           Icon(Icons.account_circle, size: 40.h),
-          SizedBox(
-            width: 200.w,
-            child: Text(
-              Users.users.last.name,
-              style: TextStyle(
-                  fontSize: 20.sp, color: ColorConstants.kFirstTextColor),
-            ),
+          FutureBuilder(
+            future: Users().getUser(),
+              builder: (builder ,AsyncSnapshot<UserModel> snap){
+              if(!snap.hasData){
+                return SizedBox(
+                  width: 200.w,
+                  child: Text(
+                    "snap.data!.name",
+                    style: TextStyle(
+                        fontSize: 20.sp, color: ColorConstants.kFirstTextColor),
+                  ),
+                );
+              }
+              return           SizedBox(
+                width: 200.w,
+                child: Text(
+                  snap.data!.name,
+                  style: TextStyle(
+                      fontSize: 20.sp, color: ColorConstants.kFirstTextColor),
+                ),
+              );
+
+              }
           ),
           IconButton(
             onPressed: () {

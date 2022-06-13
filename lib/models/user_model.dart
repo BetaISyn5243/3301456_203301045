@@ -1,19 +1,39 @@
-class User {
-  //final String id;
-  int _id = 0;
-  final String name;
-  final String phone;
-  final String email;
-  final String password;
+class UserModel {
+  String name =" ";
+  String username = " ";
+  String email = " ";
+  String password = " ";
+  String phone = " ";
 
-  User({
-    required this.name,
-    required this.phone,
-    required this.password,
-    required this.email,
+  UserModel({
+    required String name,
+    required String username,
+    required String email,
+    required String password,
+    required String phone,
   }) {
-    _id++;
+    this.name = name;
+    this.username = username;
+    this.email = email;
+    this.password = password;
+    this.phone = phone;
   }
 
-  get id => _id;
+  UserModel.fromJson(Map<String, dynamic> json) {
+    name = json['name'];
+    username = json['username'];
+    email = json['email'];
+    password = json['password'];
+    phone = json['phone'];
+  }
+
+  Map<String, dynamic> toJson() {
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['name'] = name;
+    data['username'] = username;
+    data['email'] = email;
+    data['password'] = password;
+    data['phone'] = phone;
+    return data;
+  }
 }
